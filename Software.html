@@ -4,7 +4,7 @@
     <meta charset="utf-8">
 
     <link rel="icon" href="static/picture/title-logo.png">
-    
+
     <title>AI-Promoters 主页</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -241,8 +241,8 @@
     <nav class="nav">
 
         <div class="container" style="text-align: center">
-            <img src="static/pictures/tmp_logo2.png"
-                style="width: 2rem;height: 2rem;position: relative;left:0;border-radius:1rem;">
+            <img src="static/pictures/logo2.png"
+                style="width: 6rem;height: 6rem;position: relative;left:0;border-radius:50%;">
             <ul style="list-style: none">
                 <li><a href="index.html">Homepage</a></li>
                 <div class="dropdown">
@@ -324,10 +324,12 @@
     <div id="parallax1" class="">
         <div id="top"></div>
     </div>
-    <img src="static/pictures/vae_btn1.png" id = "vaeImg" class="SlideImage1" style="margin-left: 22%;margin-top: 30%;border-radius: 50%;"
-        onclick="addVaeTask()">
-    <img src="static/pictures/pred_btn1.png" class="SlideImage1" style="margin-left: 42%;margin-top: 30%;border-radius: 50%;">
-    <img src="static/pictures/ga_btn1.png" class="SlideImage1" style="margin-left: 62%;margin-top: 30%;border-radius: 50%;">
+    <img src="static/pictures/vae_btn1.png" id="vaeImg" class="SlideImage1"
+        style="margin-left: 22%;margin-top: 30%;border-radius: 50%;">
+    <img src="static/pictures/pred_btn1.png" id="predImg" class="SlideImage1"
+        style="margin-left: 42%;margin-top: 30%;border-radius: 50%;" onclick="addPredTask()">
+    <img src="static/pictures/ga_btn1.png" id="gaImg" class="SlideImage1"
+        style="margin-left: 62%;margin-top: 30%;border-radius: 50%;" onclick="addGATask()">
 
     <div class="sections-container">
         <div class="carousel">
@@ -335,6 +337,12 @@
                 <!------------------------------ section 1------------------------------------>
                 <section class="slide-sections" style="height: 100%;">
                     <div class="main-body">
+                        <h2>使用提示</h2>
+                        <p>VAE生成器：</p>
+                        <p>您可以输入启动子序列来生成新的启动子，您可以选择粘贴序列或上传文件；如果没有序列输入，服务器将使用我们训练的模型生成类似启动子的序列</p>
+                        <h2>任务列表</h2>
+
+                        <div id="contents"></div>
                     </div>
                 </section>
             </div>
@@ -397,29 +405,79 @@
 
 </body>
 
+
 <body>
 
     <div id="dialog-form" title="添加任务">
         <p class="validateTips">Not all form fields are required.</p>
-    
+
         <form>
             <fieldset>
                 <label for="name">输入序列(可选)</label>
-                <input type="text" name="name" id="name" value="Jane Smith" class="text ui-widget-content ui-corner-all">
+                <input type="text" name="name" id="name" value="Jane Smith"
+                    class="text ui-widget-content ui-corner-all">
                 <label for="file">上传文件(可选)</label>
-                <input type="file" name="file" id="file"  class="text ui-widget-content ui-corner-all">
+                <input type="file" name="file" id="file" class="text ui-widget-content ui-corner-all">
                 <label for="email">Email</label>
-                <input type="text" name="email" id="email" value="jane@smith.com" class="text ui-widget-content ui-corner-all">
+                <input type="text" name="email" id="email" value="jane@smith.com"
+                    class="text ui-widget-content ui-corner-all">
                 <label for="password">Password</label>
-                <input type="password" name="password" id="password" value="xxxxxxx" class="text ui-widget-content ui-corner-all">
-    
+                <input type="password" name="password" id="password" value="xxxxxxx"
+                    class="text ui-widget-content ui-corner-all">
+
                 <!-- Allow form submission with keyboard without duplicating the dialog button -->
                 <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
             </fieldset>
         </form>
     </div>
-    
-    
+
+    <div id="dialog-form-1" title="添加预测任务">
+        <p class="validateTips">Not all form fields are required.</p>
+
+        <form>
+            <fieldset>
+                <label for="name">输入序列(可选)</label>
+                <input type="text" name="name" id="name" value="Jane Smith"
+                    class="text ui-widget-content ui-corner-all">
+                <label for="file">上传文件(可选)</label>
+                <input type="file" name="filePred" id="filePred" class="text ui-widget-content ui-corner-all">
+                <label for="email">Email</label>
+                <input type="text" name="email" id="email" value="jane@smith.com"
+                    class="text ui-widget-content ui-corner-all">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" value="xxxxxxx"
+                    class="text ui-widget-content ui-corner-all">
+
+                <!-- Allow form submission with keyboard without duplicating the dialog button -->
+                <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
+            </fieldset>
+        </form>
+    </div>
+
+    <div id="dialog-form-2" title="添加遗传算法任务">
+        <p class="validateTips">Not all form fields are required.</p>
+
+        <form>
+            <fieldset>
+                <label for="name">输入序列(可选)</label>
+                <input type="text" name="name" id="name" value="Jane Smith"
+                    class="text ui-widget-content ui-corner-all">
+                <label for="file">上传文件(可选)</label>
+                <input type="file" name="fileGA" id="fileGA" class="text ui-widget-content ui-corner-all">
+                <label for="email">Email</label>
+                <input type="text" name="email" id="email" value="jane@smith.com"
+                    class="text ui-widget-content ui-corner-all">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" value="xxxxxxx"
+                    class="text ui-widget-content ui-corner-all">
+
+                <!-- Allow form submission with keyboard without duplicating the dialog button -->
+                <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
+            </fieldset>
+        </form>
+    </div>
+
+
     <div id="users-contain" class="ui-widget">
         <h1>Existing Users:</h1>
         <table id="users" class="ui-widget ui-widget-content">
@@ -433,110 +491,218 @@
             <tbody>
                 <tr>
                     <td>John Doe</td>
-                    <td><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="eb81848385c58f848eab8e938a869b878ec5888486">[email&#160;protected]</a></td>
+                    <td><a href="/cdn-cgi/l/email-protection" class="__cf_email__"
+                            data-cfemail="eb81848385c58f848eab8e938a869b878ec5888486">[email&#160;protected]</a></td>
                     <td>johndoe1</td>
                 </tr>
             </tbody>
         </table>
     </div>
     <button id="create-user">Create new user</button>
-    
-    
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+</body>
 <script>
-    $( function() {
-		var dialog, form,
+    $(function () {
+        var dialog, form, dialogPred, dialogGA,
 
-			// From http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#e-mail-state-%28type=email%29
-			emailRegex = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/,
-			name = $( "#name" ),
-			email = $( "#email" ),
-			password = $( "#password" ),
-			allFields = $( [] ).add( name ).add( email ).add( password ),
-			tips = $( ".validateTips" );
+            // From http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#e-mail-state-%28type=email%29
+            emailRegex = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/,
+            name = $("#name"),
+            email = $("#email"),
+            password = $("#password"),
+            allFields = $([]).add(name).add(email).add(password),
+            tips = $(".validateTips");
 
-		function updateTips( t ) {
-			tips
-				.text( t )
-				.addClass( "ui-state-highlight" );
-			setTimeout(function() {
-				tips.removeClass( "ui-state-highlight", 1500 );
-			}, 500 );
-		}
+        function updateTips(t) {
+            tips
+                .text(t)
+                .addClass("ui-state-highlight");
+            setTimeout(function () {
+                tips.removeClass("ui-state-highlight", 1500);
+            }, 500);
+        }
 
-		function checkLength( o, n, min, max ) {
-			if ( o.val().length > max || o.val().length < min ) {
-				o.addClass( "ui-state-error" );
-				updateTips( "Length of " + n + " must be between " +
-					min + " and " + max + "." );
-				return false;
-			} else {
-				return true;
-			}
-		}
+        function checkLength(o, n, min, max) {
+            if (o.val().length > max || o.val().length < min) {
+                o.addClass("ui-state-error");
+                updateTips("Length of " + n + " must be between " +
+                    min + " and " + max + ".");
+                return false;
+            } else {
+                return true;
+            }
+        }
 
-		function checkRegexp( o, regexp, n ) {
-			if ( !( regexp.test( o.val() ) ) ) {
-				o.addClass( "ui-state-error" );
-				updateTips( n );
-				return false;
-			} else {
-				return true;
-			}
-		}
+        function checkRegexp(o, regexp, n) {
+            if (!(regexp.test(o.val()))) {
+                o.addClass("ui-state-error");
+                updateTips(n);
+                return false;
+            } else {
+                return true;
+            }
+        }
 
-		function addUser() {
-			var valid = true;
-			allFields.removeClass( "ui-state-error" );
+        function addUser() {
+            var valid = true;
+            allFields.removeClass("ui-state-error");
 
-			valid = valid && checkLength( name, "username", 3, 16 );
-			valid = valid && checkLength( email, "email", 6, 80 );
-			valid = valid && checkLength( password, "password", 5, 16 );
+            valid = valid && checkLength(name, "username", 3, 16);
+            valid = valid && checkLength(email, "email", 6, 80);
+            valid = valid && checkLength(password, "password", 5, 16);
 
-			valid = valid && checkRegexp( name, /^[a-z]([0-9a-z_\s])+$/i, "Username may consist of a-z, 0-9, underscores, spaces and must begin with a letter." );
-			valid = valid && checkRegexp( email, emailRegex, "eg. ui@jquery.com" );
-			valid = valid && checkRegexp( password, /^([0-9a-zA-Z])+$/, "Password field only allow : a-z 0-9" );
+            valid = valid && checkRegexp(name, /^[a-z]([0-9a-z_\s])+$/i, "Username may consist of a-z, 0-9, underscores, spaces and must begin with a letter.");
+            valid = valid && checkRegexp(email, emailRegex, "eg. ui@jquery.com");
+            valid = valid && checkRegexp(password, /^([0-9a-zA-Z])+$/, "Password field only allow : a-z 0-9");
 
-			if ( valid ) {
-				$( "#users tbody" ).append( "<tr>" +
-					"<td>" + name.val() + "</td>" +
-					"<td>" + email.val() + "</td>" +
-					"<td>" + password.val() + "</td>" +
-				"</tr>" );
-				dialog.dialog( "close" );
-			}
-			return valid;
-		}
+            if (valid) {
+                $("#users tbody").append("<tr>" +
+                    "<td>" + name.val() + "</td>" +
+                    "<td>" + email.val() + "</td>" +
+                    "<td>" + password.val() + "</td>" +
+                    "</tr>");
+                dialog.dialog("close");
+            }
+            return valid;
+        }
 
-		dialog = $( "#dialog-form" ).dialog({
-			autoOpen: false,
-			height: 400,
-			width: 350,
-			modal: true,
-			buttons: {
-				"Create an account": addUser,
-				Cancel: function() {
-					dialog.dialog( "close" );
-				}
-			},
-			close: function() {
-				form[ 0 ].reset();
-				allFields.removeClass( "ui-state-error" );
-			}
-		});
+        dialog = $("#dialog-form").dialog({
+            autoOpen: false,
+            height: 400,
+            width: 350,
+            modal: true,
+            buttons: {
+                "submit": addVaeTask,
+                Cancel: function () {
+                    dialog.dialog("close");
+                }
+            },
+            close: function () {
+                form[0].reset();
+                allFields.removeClass("ui-state-error");
+            }
+        });
 
-		form = dialog.find( "form" ).on( "submit", function( event ) {
-			event.preventDefault();
-			addUser();
-		});
+        dialogPred = $("#dialog-form-1").dialog({
+            autoOpen: false,
+            height: 400,
+            width: 350,
+            modal: true,
+            buttons: {
+                "Create an account": addPredTask,
+                Cancel: function () {
+                    dialogPred.dialog("close");
+                }
+            },
+            close: function () {
+                form[0].reset();
+                allFields.removeClass("ui-state-error");
+            }
+        });
 
-		$( "#create-user" ).button().on( "click", function() {
-			dialog.dialog( "open" );
-		});
-        $( "#vaeImg" ).on( "click", function() {
-			dialog.dialog( "open" );
-		});
-	} );
+        dialogGA = $("#dialog-form-2").dialog({
+            autoOpen: false,
+            height: 400,
+            width: 350,
+            modal: true,
+            buttons: {
+                "Create an account": addGATask,
+                Cancel: function () {
+                    dialogGA.dialog("close");
+                }
+            },
+            close: function () {
+                form[0].reset();
+                allFields.removeClass("ui-state-error");
+            }
+        });
+
+        form = dialog.find("form").on("submit", function (event) {
+            event.preventDefault();
+            addUser();
+        });
+        formPred = dialog.find("form").on("submit", function (event) {
+            event.preventDefault();
+            addUser();
+        });
+        formGA = dialog.find("form").on("submit", function (event) {
+            event.preventDefault();
+            addUser();
+        });
+
+
+
+        $("#create-user").button().on("click", function () {
+            dialog.dialog("open");
+        });
+        $("#vaeImg").on("click", function () {
+            dialog.dialog("open");
+        });
+        $("#predImg").on("click", function () {
+            dialogPred.dialog("open");
+        });
+        $("#gaImg").on("click", function () {
+            dialogGA.dialog("open");
+        });
+        /************请求服务*************/
+        var cnt = 0
+        function addVaeTask() {
+            /****显示表单窗口****/
+            var p = document.getElementById("contents")
+            content = ""
+            content += "<div style = 'background-color: #8FDED0; border-radius: 3%; padding : 2rem; margin:2rem'>"
+            content += "<p>任务类型：</p>"
+            content += "<p>VAE启动子生成</p>"
+            content += "<p>" + "id = 'task" + cnt + "'</p>"
+            content += "<p id = 'task" + cnt + "'>状态：OK</p>"
+            cnt += 1
+            content += "</div>"
+            p.innerHTML += content
+            var formData = new FormData();
+            var f = document.getElementById('file');
+            var filename = f.value; // 'C:\fakepath\test.png'
+            console.log(filename)
+            dialog.dialog("close");
+            window.scrollTo(0,document.body.scrollHeight-1950)
+
+        }
+        function addPredTask() {
+            /****显示表单窗口****/
+            /****显示表单窗口****/
+            var p = document.getElementById("contents")
+            content = ""
+            content += "<div style = 'background-color: #8FDED0; border-radius: 3%; padding : 2rem; margin:2rem'>"
+            content += "<p>任务类型：</p>"
+            content += "<p>VAE启动子生成</p>"
+            content += "<p>" + "id = 'task" + cnt + "'</p>"
+            content += "<p id = 'task" + cnt + "'>状态：OK</p>"
+            cnt += 1
+            content += "</div>"
+            p.innerHTML += content
+            dialogPred.dialog("close");
+
+        }
+        function addGATask() {
+            /****显示表单窗口****/
+            /****显示表单窗口****/
+            var p = document.getElementById("contents")
+            content = ""
+            content += "<div style = 'background-color: #8FDED0; border-radius: 3%; padding : 2rem; margin:2rem'>"
+            content += "<p>任务类型：</p>"
+            content += "<p>VAE启动子生成</p>"
+            content += "<p>" + "id = 'task" + cnt + "'</p>"
+            content += "<p id = 'task" + cnt + "'>状态：OK</p>"
+            cnt += 1
+            content += "</div>"
+            p.innerHTML += content
+            dialogGA.dialog("close");
+            window.scrollTo(0,document.body.scrollHeight)
+
+        }
+    });
+
 </script>
 <style>
     /********图标*********/
@@ -546,6 +712,7 @@
         position: fixed;
         animation: ghostUpdown1 1.5s infinite alternate;
         -webkit-animation: ghostUpdown1 1.5s infinite alternate;
+        z-index: 1;
     }
 
     /***文本部分样式***/
@@ -617,11 +784,7 @@
             nav.classList.remove('active')
         }
     }
-    /************请求服务*************/
-    function addVaeTask(text,file) {
-        /****显示表单窗口****/
-        
-    }
+
 
 </script>
 
