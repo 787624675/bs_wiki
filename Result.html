@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+
+    <link rel="icon" href="static/picture/title-logo.png">
+    <title>AI-Promoters 主页</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            overflow-x: hidden;
+        }
+
+        main {
+            flex: 1;
+        }
+
+        h1 {
+            font-family: 'Lato', 'sans-serif';
+            font-weight: 300;
+        }
+
+        .footer-item a {
+            text-decoration: none;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .waves {
+            width: 100vw;
+            height: 15vh;
+            margin-bottom: -7px;
+            min-height: 100px;
+            max-height: 150px;
+        }
+
+        .parallax>use {
+            animation: move-forever 25s cubic-bezier(.55, .5, .45, .5) infinite;
+        }
+
+        .parallax>use:nth-child(1) {
+            animation-delay: -10s;
+            animation-duration: 5s;
+        }
+
+        .parallax>use:nth-child(2) {
+            animation-delay: -8s;
+            animation-duration: 10s;
+        }
+
+        .parallax>use:nth-child(3) {
+            animation-delay: -6s;
+            animation-duration: 15s;
+        }
+
+        .parallax>use:nth-child(4) {
+            animation-delay: -1s;
+            animation-duration: 20s;
+        }
+
+        @keyframes move-forever {
+            0% {
+                transform: translate3d(-90px, 0, 0);
+            }
+
+            100% {
+                transform: translate3d(85px, 0, 0);
+            }
+        }
+
+        @media (max-width : 768px) {
+            .waves {
+                height: 40px;
+                min-height: 40px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+        }
+
+        .footer-items {
+            width: 100vw;
+            background-color: #90C9DF;
+            display: flex;
+            justify-content: center;
+
+            /*justify-content: space-evenly;*/
+            /*margin: 10% 10%;*/
+            /*padding: 3% 5%;*/
+        }
+
+        .footer-item {
+            width: 30%;
+            padding: 3% 5%;
+            flex-wrap: nowrap;
+        }
+
+        .footer-items h1 {
+            color: #fff;
+            font-size: 50px;
+            margin: 0px 0px 10px 0;
+        }
+
+        .footer-items p {
+            color: #fff;
+            font-size: 20px;
+            margin: 10px 20px 10px 0;
+            text-decoration: none;
+        }
+
+        .footer-items p1 {
+            color: #fff;
+            font-size: 28px;
+            margin: 10px 20px 10px 0;
+            text-align: justify
+        }
+
+        .footer-items p2 {
+            color: #fff;
+            font-size: 25px;
+            margin: 10px 20px 10px 0;
+            text-align: justify
+        }
+
+        .footer-icons {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .footer-icons img {
+            width: 80px;
+            height: 80px;
+            margin: 0 10px 0 2px;
+        }
+
+        .footer-icons1 img {
+            width: 68px;
+            height: 68px;
+            margin: 0 20px 15px 10px;
+        }
+
+        .footer-icons2 img {
+            float: none;
+            width: 500px;
+            height: 300px;
+            margin: 200px 20px 0px -350px;
+        }
+    </style>
+</head>
+
+<style>
+    body {
+        background-color: #f5f5f5;
+    }
+</style>
+
+<style>
+    /***头图**/
+    #parallax1 {
+        background-image: url(static/pictures/result1.png);
+        background-attachment: fixed;
+        background-size: 100%;
+        background-color: #f5f5f5;
+        background-repeat: no - repeat;
+        width: 100%;
+        padding: 50%;
+        margin: none;
+
+    }
+</style>
+
+<body>
+    <nav class="nav">
+
+        <div class="container" style="text-align: center">
+            <img src="static/pictures/tmp_logo2.png"
+                style="width: 2rem;height: 2rem;position: relative;left:0;border-radius:1rem;">
+            <ul style="list-style: none">
+                <li><a href="index.html">Homepage</a></li>
+                <div class="dropdown">
+                    <a href="#" one-link-mark="yes" class="dropbtn" onmouseover="showProjectBlock()"
+                        onmouseleave="hideProjectBlock()" id="our_project" style="color:#526ad4">
+                        项目
+                        <i class="icon-downarrow"></i>
+                    </a>
+                    <div class="dropdown-content" id="project" onmouseover="showProjectBlock()"
+                        onmouseleave="hideProjectBlock()" style="border-radius: 8px; display: none;">
+                        <div class="dropdownBtn">
+                            <a href="Background.html" on-link-mark="yes"
+                                style="font-weight:normal;font-family:'Trebuchet MS';display: block;">
+                                背景
+                            </a>
+                        </div>
+                        <div class="dropdownBtn">
+                            <a href="Design.html" on-link-mark="yes"
+                                style="font-weight:normal;font-family:'Trebuchet MS';display: block;">
+                                设计
+                            </a>
+                        </div>
+                        <div class="dropdownBtn">
+                            <a href="Protocol.html" on-link-mark="yes"
+                                style="font-weight:normal;font-family:'Trebuchet MS';display: block;">
+                                方案 Protocol
+                            </a>
+                        </div>
+                        <div class="dropdownBtn">
+                            <a href="Result.html" on-link-mark="yes"
+                                style="font-weight:normal;font-family:'Trebuchet MS';display: block;">
+                                结果 Result
+                            </a>
+                        </div>
+                        <div class="dropdownBtn">
+                            <a href="Conclusion.html" on-link-mark="yes"
+                                style="font-weight:normal;font-family:'Trebuchet MS';display: block;">
+                                结论 Conclusion
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <li><a href="Model.html" id="medal">建模 Model</a></li>
+                <div class="dropdown">
+                    <a href="#" one-link-mark="yes" class="dropbtn" onmouseover="showSuppBlock()"
+                        onmouseleave="hideSuppBlock()" id="our_team">
+                        其他 Supplements
+                        <i class="icon-downarrow"></i>
+                    </a>
+                    <div class="dropdown-content" id="supp" onmouseover="showSuppBlock()" onmouseleave="hideSuppBlock()"
+                        style="border-radius: 8px; display: none;">
+                        <div class="dropdownBtn">
+                            <a href="Parts.html" on-link-mark="yes"
+                                style="font-weight:normal;font-family:'Trebuchet MS';display: block;">
+                                元件 Parts
+                            </a>
+                        </div>
+
+                        <div class="dropdownBtn">
+                            <a href="Collaboration.html" on-link-mark="yes"
+                                style="font-weight:normal;font-family:'Trebuchet MS';display: block;">
+                                合作 Collaboration
+                            </a>
+                        </div>
+
+                        <div class="dropdownBtn">
+                            <a href="Software.html" on-link-mark="yes"
+                                style="font-weight:normal;font-family:'Trebuchet MS';display: block;">
+                                软件 Software
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <li><a href="Team.html" id="team">团队与合作 Team</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="parallax1" class="">
+        <div id="top"></div>
+    </div>
+
+
+    <div class="sections-container">
+        <aside class="sticky" style="display: block;">
+            <div id="sub-nav" class="sub-navigation-content">
+                <div class="sub-navigation-chapter cool-link2">
+                    <a class="main-nav-link" linkedidchapter="slide1-chapter1">数据准备</a>
+                    <!------Chapter one -->
+                </div>
+                <div class="sub-navigation-chapter cool-link2">
+                    <a class="main-nav-link" linkedidchapter="slide1-chapter2">预测器的训练及评估</a>
+                    <!------Chapter Two -->
+                </div>
+                <div class="sub-navigation-chapter cool-link2">
+                    <a class="main-nav-link" linkedidchapter="slide1-chapter3">两种方式进行启动子从头设计</a>
+                    <!------Chapter Three -->
+                </div>
+                <div class="sub-navigation-chapter cool-link2">
+                    <a class="main-nav-link" linkedidchapter="slide1-chapter4">对生成的启动子进行分析</a>
+                    <!------Chapter Three -->
+                </div>
+                <div class="sub-navigation-chapter cool-link2">
+                    <a class="main-nav-link" linkedidchapter="slide1-chapter5">讨论</a>
+                    <!------Chapter Three -->
+                </div>
+            </div>
+        </aside>
+        <div class="carousel">
+            <div class="slider" style="transform: translateX(0%);">
+                <!------------------------------ section 1------------------------------------>
+                <section class="slide-sections" style="height: 100%;">
+                    <div class="main-body">
+                        <div class="main-body-content">
+                            <div id="slide1-chapter1">
+                                <h2>数据准备</h2>
+                                <h3>机器学习的训练数据</h3>
+                                <h4>枯草芽孢杆菌基因组尺度启动子序列-转录强度数据库</h4>
+                                <p>通过使用3种预测软件进行投票的方式，我们在枯草芽孢杆菌基因组中预测出了4501条启动子序列。同时，我们对实验室中枯草芽孢杆菌菌株进行转录组测序，获得了不同基因的转录强度。（详细描述见方案protocol）</p>
+                                <p>依照启动子序列与调控基因的对应关系，将基因的转录强度（表示为FPKM值）与启动子进行一一对应。由于不同基因的表达强度相差几个数量级，为了提升训练效果，我们将强度为0的数据舍弃，之后对所有数据取log2处理。去掉重复序列后，4128条启动子序列的强度分布如下：
+                                </p>
+                                <div class="figure-container" style="text-align:center">
+                                        <img src="static/pictures/res_figure1.png"
+                                        alt="">
+                                </div>
+
+                            </div>
+                            <div id="slide1-chapter2">
+                                <h2>基于荧光蛋白相对强度归一化处理的文献数据</h2>
+                                <p>在收集天然启动子数据的同时，我们还通过收集多篇文献获得了文献启动子序列-强度数据。但由于不同文献表示相对强度的参考值不同，为了获得一致化的本地数据，我们从每组文献选取出中等强度的启动子，构建表达绿色荧光蛋白GFP的质粒进行表征，并将以枯草芽孢杆菌中典型的强启动子PvegI的强度定为100，不同文献启动子荧光蛋白相对强度及其归一化结果如图所示。 </p>
+                                <div class="figure-container" style="text-align:center">
+                                    <img src="static/pictures/res_figure2.png"
+                                        style="width:60%; ">
+
+                                </div>
+                                <p>以实验测得的表达强度为标准将文献数据的强度进行统一，经过去除重复的启动子序列，并对其相对荧光强度处理（取log2）后，我们得到了578条经过实验验证的启动子数据集。
+                                </p>
+
+                            </div>
+                            <div id="slide1-chapter3">
+                                <h2>预测器的训练及评估</h2>
+                                <h3>模型训练</h3>
+                                <h4>数据集的获取与处理</h4>
+                                <p>根据方案Protocol中描述，前期结合启动子预测、转录组测序以及文献数据一致化处理，分别构建了启动子序列-转录强度数据库与序列-相对强度数据库。由于测得的强度数值差异过大，统一将强度数值进行取log2的操作。其中启动子序列-转录强度数据库包含4128条启动子与强度信息，序列-相对强度数据库包含578条启动子与强度信息。</p>
+                                <h4>模型训练与参数调整</h4>
+                                <p>分别利用启动子序列-转录强度数据库与序列-相对强度数据库对所构建的预测器进行训练。利用K-折交叉验证对模型的学习速率α、迭代次数epoch、批量大小batch-size、卷积核大小与数目、嵌入层维度等参数进行调整优化。</p>
+                                <p>
+                                    在训练过程中，我们发现：由启动子预测识别结合转录组测序获得的启动子序列-转录强度数据库，虽然数据量较大，启动子类型更丰富，但很难利用模型训练出有价值的序列与强度的对应关系，如下图所示：
+                                </p>
+
+                                <h1>sgRNA-nCas9</h1>
+                                <p>In the CRISPR/Cas9 system, Cas9 undergoes conformational changes upon sgRNA binding,
+                                    and is subsequently directed to its target site. Then, Cas9 introduces a double
+                                    strand break (DSB) in the DNA sequence of the target site <a linkedidchapter="r4"
+                                        class="main-nav-link hyperlink"><sup>[4]</sup></a>.
+                                    Cas9 has two nuclease domains: the HNH and RuvC-like domains. The Cas9 HNH nuclease
+                                    domain cleaves the complementary strand, while the Cas9 RuvC-like domain cleaves the
+                                    template strand <a linkedidchapter="r5"
+                                        class="main-nav-link hyperlink"><sup>[5]</sup></a>.
+                                    In our project, we created a HNH nuclease activity-null mutant (H840A), designated
+                                    as nCas9, which can be used to generate DNA break in the template strand.
+                                </p>
+                                <div class="figure-container" style="text-align:center">
+                                    <img src="https://2021.igem.org/wiki/images/0/00/T--NEFU_China--Design-3.png"
+                                        style="width:50%; ">
+                                </div>
+                                <h1>ZF-Nb.BbvCI</h1>
+                                <p>The restriction endonuclease BbvCI from <span style="font-style: italic"> Bacillus
+                                        brevis </span> recognizes a non-palindromic sequence CC^TCAGC/GC^TGAGG. BbvCI
+                                    consists of two heterogeneous subunits, R1 and R2 <a linkedidchapter="r6"
+                                        class="main-nav-link hyperlink"><sup>[6]</sup></a>.
+                                    The R1 subunit cleaves the bottom chain (GC^TGAGG, where ^ indicating the cleavage
+                                    site), while the R2 subunit cuts the top chain (CC^TCAGC). The inactivating
+                                    mutations of R1 or R2 do not disrupt protein folding and DNA sequence recognition of
+                                    BbvCI <a linkedidchapter="r7" class="main-nav-link hyperlink"><sup>[7]</sup></a>.
+                                </p>
+                                <div class="figure-container" style="text-align:center">
+                                    <img src="https://2021.igem.org/wiki/images/9/90/T--NEFU_China--Deisgn-4.png"
+                                        style="width:50%; ">
+                                </div>
+                                <p>In our project, we used the R1<sup>+</sup>R2<sup>-</sup> mutant, named as Nb.BbvCI.
+                                    In addition, we explored the Zinc Finger Tools (URL http://www.zincfingertools.org.)
+                                    created by <span style="font-style: italic"> Jeffrey G. Mandell et al </span><a
+                                        linkedidchapter="r8" class="main-nav-link hyperlink"><sup>[8]</sup></a>.
+                                    Using the experimentally characterized database of zinc finger domains, the expected
+                                    amino acid sequence of a zinc finger protein bound to the selected target can be
+                                    generated. The zinc finger protein can meet the needs of specific identification to
+                                    a certain extent.
+                                </p>
+                            </div>
+                            <div id="slide1-chapter4">
+                                <h2>Single-stranded DNA Displacing</h2>
+                                <p>For the purpose to obtain ssDNA, we added Phi29 DNA polymerase to the system, which
+                                    is an enzyme widely used in RCA. Phi29 catalyzes 5'-to-3' polymerization and
+                                    possesses strand displacement activity, which enables it to displace the
+                                    complementary strand in double-stranded regions during DNA synthesis<a
+                                        linkedidchapter="r9" class="main-nav-link hyperlink"><sup>[9]</sup></a>.
+                                    In our design, Phi29 continues to add nucleotides from the nick site. During this
+                                    elongation process, the complementary strand behind the gap at 3'-side can be
+                                    displaced. The resultant short ssDNA will act as a primer in the RCA reaction.
+                                </p>
+                                <div class="figure-container" style="text-align:center">
+                                    <img src="https://2021.igem.org/wiki/images/2/24/T--NEFU_China--Deisgn-5.png"
+                                        style="width:40%; ">
+                                </div>
+                                <p>After extensively exploring literature, we found that the 3'-to-5' ssDNA
+                                    exonucleolytic activity of Phi29 could adversely affect the results by potentially
+                                    degrading the displaced ssDNA<a linkedidchapter="r10"
+                                        class="main-nav-link hyperlink"><sup>[10]</sup></a>.
+                                    Therefore, we decided to test Klenow, the large fragment of DNA polymerase I, in
+                                    comparison to Phi29, and evaluate the efficiency of the ssDNA production.
+                                </p>
+                            </div>
+                            <div id="slide1-chapter5">
+                                <h2>讨论</h2>
+                                <h3>转录组数据和文献数据的特点</h3>
+                                <p>在实验的过程中，我们发现通过文献调研和实验表征得到数据库尽管数据量较小，但相对于大量的使用转录组测序和启动子预测所获得的数据而言，其训练效果明显更好。我们曾尝试使用包括Vgg16在内的更复杂、学习能力更强的模型进行训练，但没有得到更好的效果，这说明限制模型效果的因素很可能在于数据本身的相关性。
+                                </p>
+                                <p>由于基因的表达强度受多种因素影响，启动子虽然在其中起到了较为重要的作用，但使用转录组测序的数据会受其他因素影响而使序列和强度之间的相关性降低。使用荧光蛋白虽然表征的是蛋白表达强度而转录强度，但由于表达载体在构建过程中排除了其他干扰项，因此启动子序列和表达强度之间的相关性更强。未来我们应着眼于寻找更多具有更高相关性的数据进行训练，以达到更好的效果。
+                                    >> 这与我们咨询相关专家得到的反馈相符 详见 合作 collaboration
+                                </p>
+                                <p>We can skip the primer removal and recombination process, and directly put the
+                                    ssDNA-template hybrid mix for RCA, which simplifies the procedure and saves possible
+                                    extra cost of ssDNA-specific exonuclease, such as exonuclease I<a
+                                        linkedidchapter="r9" class="main-nav-link hyperlink"><sup>[9]</sup></a>.</p>.
+                                <div class="figure-container" style="text-align:center">
+                                    <img src="https://2021.igem.org/wiki/images/a/a2/T--NEFU_China--Deisgn-6.png"
+                                        style="width:40%; ">
+                                </div>
+                                <p>In the RCA reaction, Phi29 continues to synthesize ssDNA from the ssDNA (as a primer)
+                                    with a high processivity and strong DNA strand displacement activity. The resultant
+                                    long chain ssDNA is composed of the tandem repeat of G-tract (G ≥ 3) sequences,
+                                    which can form G-quadruplex needed in the following test. We also used Klenow to
+                                    replace the role of Phi29 in RCA and evaluated whether it could possibly improve the
+                                    amplification yield.</p>
+
+                            </div>
+
+
+
+
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <svg class="waves" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+            <defs>
+                <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z">
+                </path>
+            </defs>
+            <g class="parallax">
+                <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(252, 204, 233, 0.9)"></use>
+                <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(181, 249, 238, 0.7)"></use>
+                <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(115, 193, 245, 0.5)"></use>
+                <use xlink:href="#gentle-wave" x="48" y="7" fill="rgba(110, 168, 181, 0.3)"></use>
+            </g>
+        </svg>
+        <div class="footer-items">
+            <div class="footer-item">
+                <h1>About Us</h1>
+                <p1>This team is composed of many enthusiastic students with different majors from Two colleges of our
+                    university. To help the world better development, a group of the beginners were looking
+                    forward to gaining extraordinary experience, and we did it.</p1>
+            </div>
+            <div class="footer-item">
+                <h1>Address</h1>
+                <p2>天津大学</p2>
+                <br><br><br><br>
+                <h1>Helpful links</h1>
+                <a target="_blank" style="text-decoration:none;color: white" href="">Premotion Video</a>
+                <br>
+                <a target="_blank" style="text-decoration:none;color: white" href="Design.html">Design</a>
+                <br>
+                <a target="_blank" style="text-decoration:none;color: white" href="">Notebook</a>
+            </div>
+            <div class="footer-item footer-icons">
+                <div>
+                    <a target="_blank" href="https://user.qzone.qq.com/3116652779">
+                        <img src="https://2021.igem.org/wiki/images/3/3f/T--NEFU_China--QQ.png" alt="">
+                    </a>
+                    <a target="_blank"
+                        href="">
+                        <img src="https://2021.igem.org/wiki/images/f/f6/T--NEFU_China--weixin.png" alt="">
+                    </a>
+                    <a class="footer-icons1" target="_blank"
+                        href="https://www.facebook.com/profile.php?id=100070629408133">
+                        <img src="https://2021.igem.org/wiki/images/b/b5/T--NEFU_China--facebook.png" alt="">
+                    </a>
+                </div>
+                <div class="footer-icons2">
+                    <img src="static/pictures/logo1.png" alt="">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+</body>
+
+<style>
+    #main_body {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 0px;
+        padding: 0px;
+    }
+
+    .title {
+        text-align: center;
+        font-family: "Constantia", serif;
+        font-style: italic;
+        font-size: 320%;
+        font-weight: bold;
+        color: #484848;
+        text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.19);
+        margin-top: 3%;
+        margin-bottom: 3%;
+        line-height: 150%;
+    }
+
+    .subtitle {
+        text-align: center;
+        font-family: Helvetica, sans-serif;
+        font-size: 35px;
+        font-weight: normal;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .words_paragraph {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        text-indent: 36px;
+        text-align: justify;
+        font-size: 20px;
+        /*wiki上面p格式字体会变小很多，推测是字体原因*/
+        line-height: 30px;
+        margin-bottom: 20px;
+    }
+</style>
+<style>
+    /***文本部分样式***/
+    .bg {
+        background-color: #f5f5f5;
+        margin: 0px auto 20px auto;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: black;
+        background: none;
+        font-weight: normal;
+        margin: 0;
+        padding-top: 0.5em;
+        padding-bottom: 0.17em;
+        border-bottom: 1px solid #aaa;
+    }
+
+    #wavewrapper {
+        position: absolute;
+        bottom: 0;
+        z-index: 1;
+    }
+
+    #wavewrapper2 {
+        position: absolute;
+        bottom: 0;
+        z-index: 10;
+    }
+
+    /**********时间轴/子导航/进度条***********/
+    .sub-navigation-content {
+        padding: 2em 0;
+        /* border-right: solid 3px #FE9901; */
+        max-width: 220px;
+        display: block;
+    }
+</style>
+
+<script>
+    /*****下拉菜单显示与隐藏**********/
+    function showProjectBlock() {
+        document.getElementById("project").style.display = "block"
+    }
+
+    function hideProjectBlock() {
+        document.getElementById("project").style.display = "none"
+    }
+
+    function showSuppBlock() {
+        document.getElementById("supp").style.display = "block"
+    }
+
+    function hideSuppBlock() {
+        document.getElementById("supp").style.display = "none"
+    }
+    /**** navgation bar 滑动时缩小 ***/
+    const nav = document.querySelector('.nav')
+    window.addEventListener('scroll', fixNav)
+
+    function fixNav() {
+        if (window.scrollY > nav.offsetHeight + 150) {
+            nav.classList.add('active')
+        } else {
+            nav.classList.remove('active')
+        }
+    }
+
+</script>
+
+<style>
+    /**************文本和时间轴***************/
+    .main-body h2 {
+        font-size: 3.3em;
+        padding: 0.5em 0 0.5em 0;
+        color: #77abce;
+        scroll-margin-top: 79px;
+        font-family: "geometos"
+            /*大标题*/
+        ;
+    }
+
+    /************ Sub navigation  *********************/
+    aside {
+        width: 240px;
+        float: left;
+        padding-top: 5em;
+    }
+
+    .grid-normal {
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: minmax(10px, 1fr) (minmax(50px, 300px))[5] minmax(10px, 1fr);
+        grid-template-columns: minmax(10px, 1fr) repeat(5, minmax(50px, 300px)) minmax(10px, 1fr);
+    }
+
+    .grid-aside {
+        -ms-grid-column: 2;
+        -ms-grid-column-span: 1;
+        grid-column: 2/3;
+        -ms-grid-row: 1;
+        grid-row-start: 1;
+    }
+
+    .sub-navigation-content {
+        padding: 2em 0;
+        /*border-right: solid 3px #FE9901;*/
+        max-width: 220px
+    }
+
+    .sub-navigation-chapter a {
+        color: #212832;
+        font-size: 1.2em;
+        padding: 0.3em 0.3em 0 0.5em;
+        display: block;
+        transition: transform 0.5s;
+    }
+
+    .sub-navigation-chapter a:hover {
+        color: #ee786b;
+        transform: scale(1.1, 1.1);
+    }
+
+    a.main-nav-link.active {
+        font-weight: normal;
+        color: #ee786b;
+    }
+
+    .main-nav-link {
+        cursor: pointer;
+    }
+
+    #to-top-arrow a,
+    #to-top-arrow a:visited,
+    #to-top-arrow a:active {
+        color: #ee786b;
+        font-size: 2em;
+        -webkit-transition: all 0.4s;
+        -o-transition: all 0.4s;
+        transition: all 0.4s;
+        padding: 1em 2em 0 2em;
+        display: block
+    }
+
+    #to-top-arrow a:hover {
+        color: #ee786b;
+        -webkit-transition: all 0.4s;
+        -o-transition: all 0.4s;
+        transition: all 0.4s;
+    }
+
+    /* Class that is added to subnav by JS to keep it sticky */
+    .sticky {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 1em;
+    }
+
+    /************ Carousel ***********************/
+    .sections-container {
+        width: 90%;
+        margin: auto;
+    }
+
+    .carousel {
+        overflow: hidden;
+        position: relative;
+        -ms-grid-column: 3;
+        -ms-grid-column-span: 4;
+        grid-column: 3/7;
+        -ms-grid-row: 1;
+        grid-row-start: 1;
+    }
+
+    .slider {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        width: 400%;
+        height: 100%;
+        -webkit-transition: all 0.5s ease-in-out;
+        -o-transition: all 0.5s ease-in-out;
+        transition: all 0.5s ease-in-out;
+    }
+
+    .slider section {
+        width: 25%;
+    }
+
+    /************* Main-body with content **********************/
+
+
+    .main-body {
+        /*padding: 0 0 1em 0;*/
+        padding-left: 10px;
+        /*text-align: center;*/
+        /*width: 100vh;*/
+        /*margin: 0 auto;*/
+    }
+
+    .main-body p {
+        text-align: justify;
+        padding-bottom: 1em;
+        font-size: 1.1rem;
+    }
+
+    .main-body h2 {
+        font-size: 3.3em;
+        padding: 0.5em 0 0.5em 0;
+        color: #ee786b;
+        scroll-margin-top: 79px;
+        font-family: "geometos"
+            /*大标题*/
+    }
+
+    .main-body h3 {
+        padding-bottom: 0.5em;
+    }
+
+    .main-body h4 {
+        font-style: italic;
+    }
+
+    .main-body li {
+        text-align: justify;
+        list-style-position: outside;
+        padding: 0.2em 0;
+    }
+
+    .references li {
+        text-align: left;
+        font-size: 0.9em;
+        font-weight: normal;
+    }
+
+    .main-body ul,
+    .main-body ol {
+        padding-left: 1em;
+        padding-bottom: 0.8em;
+    }
+
+    .side-box-content {
+        background-color: #efefef;
+        padding: 1.5em;
+        margin-bottom: 1em;
+    }
+
+    .side-box-content p {
+        padding-bottom: 0;
+    }
+
+    #side-box-1,
+    #side-box-3 {
+        float: right;
+        width: 35%;
+    }
+
+    #side-box-2,
+    #side-box-4 {
+        width: 90%;
+    }
+
+
+    /*********头部header样式**********/
+    header {
+        background: url(static/pictures/head_img.png);
+        max-height: 360px;
+        background-position: center;
+    }
+
+    /***navigation bar 样式**/
+    .navbar-nav .dropdown-menu .navbar .dropdown-menu {
+        margin-top: 0;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0;
+        box-sizing: border-box;
+        padding-bottom: 50px;
+
+    }
+
+    .nav {
+        position: fixed;
+        background-color: #B4C7E7;
+        top: 0;
+        left: 0;
+        right: 0;
+        transition: all 0.3s ease-in-out;
+        box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
+        z-index: 999;
+        text-align: center;
+    }
+
+    .nav .container {
+        width: 80vw;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 2px 0;
+        transition: all 0.3s ease-in-out;
+        margin-top: 12px;
+    }
+
+    .nav ul {
+        display: flex;
+        list-style-type: none;
+        align-items: center;
+        justify-content: flex-start;
+        line-height: 2rem;
+        justify-content: space-evenly;
+        width: 100%;
+    }
+
+    .nav a {
+        color: #fff;
+        text-decoration: none;
+        padding: 7px 17px;
+        transition: all 0.3s ease-in-out;
+        font-weight: bold;
+        font-size: 1rem;
+    }
+
+    .nav.active {
+        background-color: #DAE3F3;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .nav.active a {
+        color: #000;
+    }
+
+    .nav.active .container {
+        padding: 10px 0;
+    }
+
+    .nav a.current,
+    .nav a:hover {
+        color: #0c291f;
+        font-weight: bold;
+    }
+
+    .dropdown {
+        display: inline-block;
+        z-index: 10001 !important;
+    }
+
+    .icon-downarrow {
+        display: inline-block;
+        color: white;
+        width: 6px;
+        height: 6px;
+        border-left-width: 2px;
+        border-left-style: solid;
+        border-left-color: white;
+        border-bottom-width: 2px;
+        border-bottom-style: solid;
+        border-bottom-color: white;
+        transform: rotate(-45deg);
+        margin-top: 0px;
+        margin-bottom: 4px;
+        margin-left: 6px;
+
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+            rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+            rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+        line-height: initial;
+
+    }
+
+    .dropdownBtn a {
+        color: black;
+        border-radius: 5px;
+    }
+
+    .dropdownBtn:hover a {
+        color: white;
+        background: #133470 !important;
+        border-radius: 5px;
+    }
+
+    .dropbtn {
+        display: inline-block;
+        color: white;
+        text-align: center;
+        padding-top: 14px;
+        padding-right: 30px;
+        padding-bottom: 14px;
+        padding-left: 30px;
+        text-decoration: none;
+        text-decoration-line: none;
+        text-decoration-thickness: initial;
+        text-decoration-style: initial;
+        text-decoration-color: initial;
+        font-size: 24px;
+        font-weight: bold;
+
+    }
+
+
+
+    .splitLeft {
+        position: fixed;
+        width: 200px;
+        height: 55px;
+        background-color: #c4cef8c9;
+        margin-top: 400px;
+        margin-left: -10px;
+        border-radius: 2px;
+        transition: width 0.5s;
+        -webkit-transition: width 0.5s;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+        cursor: pointer;
+    }
+
+    .barText {
+        color: #fff;
+        font-family: 'Droid Sans', sans-serif;
+        font-size: 16px;
+        font-weight: bold;
+        transition: width 0.5s;
+        float: right;
+        -webkit-transition: width 0.5s;
+        position: relative;
+        top: 15px;
+        left: -25px;
+    }
+
+    .content img {
+        max-width: 66%;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    }
+
+    .content video {
+        width: 66%;
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    }
+
+    .content {
+        max-width: 60vw;
+        margin: 60px auto;
+    }
+
+    .content h1 {
+        margin: 0;
+        color: rgb(181, 253, 229);
+        line-height: 1;
+        font-size: 60px;
+        font-weight: bolder;
+    }
+
+    .content h2 {
+        margin: 0;
+        color: rgb(181, 253, 229);
+        line-height: 1;
+        font-size: 45px;
+        font-weight: bold;
+    }
+
+    .content h3 {
+        line-height: 1;
+        font-weight: bold;
+        font-size: 27px;
+        color: rgb(181, 253, 229);
+    }
+
+    .content h4 {
+        text-align: center;
+        color: white;
+    }
+
+    .content small {
+        color: #555;
+        font-style: italic;
+    }
+
+    .content p {
+        color: white;
+        text-indent: 3em;
+    }
+
+    .content embed {
+        max-width: 100%;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    }
+
+    .content a:link {
+        color: rgb(181, 253, 229);
+    }
+
+    /********************************* Footer ***************************************/
+
+    .contact-info {
+        background-color: #212832;
+        /*position: fixed;*/
+    }
+
+    .contact-info-content {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-pack: distribute;
+        justify-content: space-around;
+        padding: 1.9em 1em;
+
+    }
+
+    .box {
+        width: 20%;
+        text-align: justify;
+    }
+
+    .box h3 {
+        font-size: 1.875em;
+        padding: 0.5em;
+        color: white;
+    }
+
+    .box h4 {
+        font-size: 1.3em;
+        padding: 5px 0;
+        color: white;
+        text-indent: 1em;
+    }
+
+    .box p {
+        color: white;
+        font-size: 1em;
+        padding: 0 1em;
+    }
+
+    .social-media-icons {
+        padding: 0 0.3em;
+        font-size: 3em;
+    }
+
+    .social-media-icons a,
+    .social-media-icons a:active,
+    .social-media-icons a:visited,
+    .box a,
+    .box a:active,
+    .box a:visited {
+        color: white;
+        -webkit-transition: all 0.3s;
+        -o-transition: all 0.3s;
+        transition: all 0.3s;
+    }
+
+    .social-media-icons a:hover,
+    .box a:hover {
+        color: #ee786b;
+        -webkit-transition: all 0.3s;
+        -o-transition: all 0.3s;
+        transition: all 0.3s;
+    }
+</style>
