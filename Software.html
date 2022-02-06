@@ -8,6 +8,7 @@
     <title>AI-Promoters 主页</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <link rel="stylesheet" href="static/css/bootstrap.css">
 
     <script src="static/js/jquery-3.6.0.js"></script>
     <script src="static/js/jquery-ui.js"></script>
@@ -65,9 +66,27 @@
     </style>
 
     <style>
+        table,
+        table tr th,
+        table tr td {
+            border: 1.5px solid #74aaf0;
+            margin: auto;
+            padding-left: 1%;
+            padding-right: 1%;
+        }
+
+        table {
+            /* width: 200px; */
+            min-height: 25px;
+            line-height: 25px;
+            text-align: center;
+            border-collapse: collapse;
+        }
+
         .zoom {
             zoom: 0.6;
         }
+
         body {
             margin: 0;
             padding: 0;
@@ -251,7 +270,7 @@
                 <li><a href="index.html">Homepage</a></li>
                 <div class="dropdown">
                     <a href="#" one-link-mark="yes" class="dropbtn" onmouseover="showProjectBlock()"
-                        onmouseleave="hideProjectBlock()" id="our_project" style="color:#1e6339">
+                        onmouseleave="hideProjectBlock()" id="our_project" style="color:#526ad4">
                         项目
                         <i class="icon-downarrow"></i>
                     </a>
@@ -284,14 +303,39 @@
                         <div class="dropdownBtn">
                             <a href="Conclusion.html" on-link-mark="yes"
                                 style="font-weight:normal;font-family:'Trebuchet MS';display: block;">
-                                结论 Conclusion
+                                结论
                             </a>
                         </div>
                     </div>
                 </div>
-                <li><a href="Model.html" id="medal">建模</a></li>
+                <li><a href="Model.html" id="model">建模</a></li>
                 <li><a href="Software.html" id="software">软件</a></li>
-                <li><a href="Team.html" id="team">团队与合作</a></li>
+                <div class="dropdown">
+                    <a href="#" one-link-mark="yes" class="dropbtn" onmouseover="showTeamBlock()"
+                        onmouseleave="hideTeamBlock()" id="our_team">
+                        合作
+                        <i class="icon-downarrow"></i>
+                    </a>
+                    <div class="dropdown-content" id="team" onmouseover="showTeamBlock()" onmouseleave="hideTeamBlock()"
+                        style="border-radius: 8px; display: none;">
+                        <div class="dropdownBtn">
+                            <a href="Team.html" on-link-mark="yes"
+                                style="font-weight:normal;font-family:'Trebuchet MS';display: block;">
+                                团队
+                            </a>
+                        </div>
+
+                        <div class="dropdownBtn">
+                            <a href="Collaboration.html" on-link-mark="yes"
+                                style="font-weight:normal;font-family:'Trebuchet MS';display: block;">
+                                合作
+                            </a>
+                        </div>
+
+
+                    </div>
+                </div>
+
                 <div class="dropdown">
                     <a href="#" one-link-mark="yes" class="dropbtn" onmouseover="showSuppBlock()"
                         onmouseleave="hideSuppBlock()" id="our_team">
@@ -308,18 +352,20 @@
                         </div>
 
                         <div class="dropdownBtn">
-                            <a href="Collaboration.html" on-link-mark="yes"
+                            <a href="Notebook.html" on-link-mark="yes"
                                 style="font-weight:normal;font-family:'Trebuchet MS';display: block;">
-                                合作
+                                笔记
                             </a>
                         </div>
 
+
                     </div>
                 </div>
-                
+
             </ul>
         </div>
     </nav>
+
 
     <div id="parallax1" class="">
         <div id="top"></div>
@@ -393,9 +439,7 @@
         <div class="footer-items">
             <div class="footer-item">
                 <h1>About Us</h1>
-                <p1>This team is composed of many enthusiastic students with different majors from Two colleges of our
-                    university. To help the world better development, a group of the beginners were looking
-                    forward to gaining extraordinary experience, and we did it.</p1>
+                <p1><a href="Team.html">团队介绍</a></p1>
             </div>
             <div class="footer-item">
                 <h1>Address</h1>
@@ -413,18 +457,16 @@
                     <a target="_blank" href="https://user.qzone.qq.com/3116652779">
                         <img src="https://2021.igem.org/wiki/images/3/3f/T--NEFU_China--QQ.png" alt="">
                     </a>
-                    <a target="_blank"
-                        href="https://mp.weixin.qq.com/s?__biz=Mzg5NTY1MzEwOQ==&amp;mid=2247483794&amp;idx=1&amp;sn=7497bc01e267e5be09fec84a8d83f38c&amp;chksm=c00c4408f77bcd1ef262ff02681ab9afa5095d6dae16065340d0454901b860f86ce3cb034962&amp;sessionid=0&amp;scene=126&amp;clicktime=1634815059&amp;enterid=1634815059&amp;ascene=3&amp;devicetype=android-29&amp;version=28000e37&amp;nettype=cmnet&amp;abtest_cookie=AAACAA%3D%3D&amp;lang=zh_CN&amp;exportkey=A5zxFrdVL6wodoaeaSTqUqU%3D&amp;pass_ticket=72mWUMrqZf%2FKxQ4l84tKbvX4CWR7faSk%2BGgKU3eeN0iD6STFEjWcrm5TSdVDHtUc&amp;wx_header=1">
-                        <img src="https://2021.igem.org/wiki/images/f/f6/T--NEFU_China--weixin.png" alt="">
+                    <a target="_blank" href="">
+                        <img src="static/pictures/github.png" alt="">
                     </a>
-                    <a class="footer-icons1" target="_blank"
-                        href="null">
+                    <a class="footer-icons1" target="_blank" href="null">
                         <img src="static/pictures/facebook.png" alt="">
                     </a>
                 </div>
-                <div class="footer-icons2">
+                <!-- <div class="footer-icons2">
                     <img src="static/pictures/logo1.png" alt="">
-                </div>
+                </div> -->
             </div>
         </div>
     </footer>
@@ -660,6 +702,18 @@
         });
         /************请求服务*************/
         var cnt = 0
+        function getElementTop(element) {
+            var actualTop = element.offsetTop;
+            var current = element.offsetParent;
+
+            while (current !== null) {
+                actualTop += current.offsetTop;
+                current = current.offsetParent;
+            }
+
+            return actualTop;
+        }
+        var eps = 480
         function addVaeTask() {
             /****显示表单窗口****/
             var p = document.getElementById("contents")
@@ -677,7 +731,11 @@
             var filename = f.value; // 'C:\fakepath\test.png'
             console.log(filename)
             dialog.dialog("close");
-            window.scrollTo(0, document.body.scrollHeight - 1750)
+            height = getElementTop(document.getElementById('task' + (cnt - 1)));
+            window.scrollTo({
+                top: height - eps,
+                behavior: 'smooth'
+            })
 
         }
         function addPredTask() {
@@ -694,7 +752,11 @@
             content += "</div>"
             p.innerHTML += content
             dialogPred.dialog("close");
-            window.scrollTo(0, document.body.scrollHeight - 1750)
+            height = getElementTop(document.getElementById('task' + (cnt - 1)));
+            window.scrollTo({
+                top: height - eps,
+                behavior: 'smooth'
+            })
 
         }
         function addGATask() {
@@ -711,7 +773,11 @@
             content += "</div>"
             p.innerHTML += content
             dialogGA.dialog("close");
-            window.scrollTo(0, document.body.scrollHeight-1750)
+            height = getElementTop(document.getElementById('task' + (cnt - 1)));
+            window.scrollTo({
+                top: height - eps,
+                behavior: 'smooth'
+            })
 
         }
 
@@ -966,7 +1032,7 @@
 
     .nav {
         position: fixed;
-        background-color: #6ead81;
+        background-color: #B4C7E7;
         top: 0;
         left: 0;
         right: 0;
@@ -994,6 +1060,8 @@
         line-height: 2rem;
         justify-content: space-evenly;
         width: 100%;
+        margin: 0.3em 0 0 1.6em;
+        padding: 0;
     }
 
     .nav a {
@@ -1002,7 +1070,7 @@
         padding: 7px 17px;
         transition: all 0.3s ease-in-out;
         font-weight: bold;
-        font-size: 1rem;
+        font-size: 1.5rem;
     }
 
     .nav.active {
@@ -1015,7 +1083,7 @@
     }
 
     .nav.active .container {
-        padding: 10px 0;
+        padding: 0px 0;
     }
 
     .nav a.current,
@@ -1058,6 +1126,7 @@
         line-height: initial;
 
     }
+
 
     .dropdownBtn a {
         color: black;

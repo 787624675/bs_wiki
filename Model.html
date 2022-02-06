@@ -1,0 +1,1459 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+
+    <link rel="icon" href="static/picture/title-logo.png">
+    <title>AI-Promoters 主页</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src='static/js/jquery.parallax-1.1.3.js'></script>
+
+    <link rel="stylesheet" href="static/css/bootstrap.css">
+
+    <style>
+        .zoom {
+            zoom: 0.6;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            overflow-x: hidden;
+
+
+        }
+
+        main {
+            flex: 1;
+        }
+
+        h1 {
+            font-family: 'Lato', 'sans-serif';
+            font-weight: 300;
+        }
+
+        .footer-item a {
+            text-decoration: none;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .waves {
+            width: 100vw;
+            height: 15vh;
+            margin-bottom: -7px;
+            min-height: 100px;
+            max-height: 150px;
+        }
+
+        .parallax>use {
+            animation: move-forever 25s cubic-bezier(.55, .5, .45, .5) infinite;
+        }
+
+        .parallax>use:nth-child(1) {
+            animation-delay: -10s;
+            animation-duration: 5s;
+        }
+
+        .parallax>use:nth-child(2) {
+            animation-delay: -8s;
+            animation-duration: 10s;
+        }
+
+        .parallax>use:nth-child(3) {
+            animation-delay: -6s;
+            animation-duration: 15s;
+        }
+
+        .parallax>use:nth-child(4) {
+            animation-delay: -1s;
+            animation-duration: 20s;
+        }
+
+        @keyframes move-forever {
+            0% {
+                transform: translate3d(-90px, 0, 0);
+            }
+
+            100% {
+                transform: translate3d(85px, 0, 0);
+            }
+        }
+
+        @media (max-width : 768px) {
+            .waves {
+                height: 40px;
+                min-height: 40px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+        }
+
+        .footer-items {
+            width: 100vw;
+            background-color: #90C9DF;
+            display: flex;
+            justify-content: center;
+
+            /*justify-content: space-evenly;*/
+            /*margin: 10% 10%;*/
+            /*padding: 3% 5%;*/
+        }
+
+        .footer-item {
+            width: 30%;
+            padding: 3% 5%;
+            flex-wrap: nowrap;
+        }
+
+        .footer-items h1 {
+            color: #fff;
+            font-size: 30px;
+            margin: 0px 0px 10px 0;
+        }
+
+        .footer-items p {
+            color: #fff;
+            font-size: 15px;
+            margin: 10px 20px 10px 0;
+            text-decoration: none;
+        }
+
+        .footer-items p1 {
+            color: #fff;
+            font-size: 20px;
+            margin: 10px 20px 10px 0;
+            text-align: justify
+        }
+
+        .footer-items p2 {
+            color: #fff;
+            font-size: 25px;
+            margin: 10px 20px 10px 0;
+            text-align: justify
+        }
+
+        .footer-icons {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .footer-icons img {
+            width: 80px;
+            height: 80px;
+            margin: 0 10px 0 2px;
+        }
+
+        .footer-icons1 img {
+            width: 68px;
+            height: 68px;
+            margin: 0 20px 15px 10px;
+        }
+
+        .footer-icons2 img {
+            float: none;
+            width: 500px;
+            height: 300px;
+            margin: 200px 20px 0px -350px;
+        }
+    </style>
+</head>
+
+<style>
+    body {
+        background-color: #f5f5f5;
+    }
+</style>
+
+<style>
+    /***头图**/
+    #parallax1 {
+        background-image: url(static/pictures/model.png);
+        background-attachment: fixed;
+        background-size: 100%;
+        background-color: #f5f5f5;
+        background-repeat: no - repeat;
+        width: 100%;
+        padding: 50%;
+        margin: none;
+
+    }
+</style>
+
+<body>
+    <nav class="nav">
+
+        <div class="container" style="text-align: center">
+            <img src="static/pictures/logo2.png"
+                style="width: 6rem;height: 6rem;position: relative;left:0;border-radius:50%;">
+            <ul style="list-style: none">
+                <li><a href="index.html">Homepage</a></li>
+                <div class="dropdown">
+                    <a href="#" one-link-mark="yes" class="dropbtn" onmouseover="showProjectBlock()"
+                        onmouseleave="hideProjectBlock()" id="our_project" style="color:#526ad4">
+                        项目
+                        <i class="icon-downarrow"></i>
+                    </a>
+                    <div class="dropdown-content" id="project" onmouseover="showProjectBlock()"
+                        onmouseleave="hideProjectBlock()" style="border-radius: 8px; display: none;">
+                        <div class="dropdownBtn">
+                            <a href="Background.html" on-link-mark="yes"
+                                style="font-weight:normal;font-family:'Trebuchet MS';display: block;">
+                                背景
+                            </a>
+                        </div>
+                        <div class="dropdownBtn">
+                            <a href="Design.html" on-link-mark="yes"
+                                style="font-weight:normal;font-family:'Trebuchet MS';display: block;">
+                                设计
+                            </a>
+                        </div>
+                        <div class="dropdownBtn">
+                            <a href="Protocol.html" on-link-mark="yes"
+                                style="font-weight:normal;font-family:'Trebuchet MS';display: block;">
+                                方案
+                            </a>
+                        </div>
+                        <div class="dropdownBtn">
+                            <a href="Result.html" on-link-mark="yes"
+                                style="font-weight:normal;font-family:'Trebuchet MS';display: block;">
+                                结果
+                            </a>
+                        </div>
+                        <div class="dropdownBtn">
+                            <a href="Conclusion.html" on-link-mark="yes"
+                                style="font-weight:normal;font-family:'Trebuchet MS';display: block;">
+                                结论
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <li><a href="Model.html" id="model">建模</a></li>
+                <li><a href="Software.html" id="software">软件</a></li>
+                <div class="dropdown">
+                    <a href="#" one-link-mark="yes" class="dropbtn" onmouseover="showTeamBlock()"
+                        onmouseleave="hideTeamBlock()" id="our_team">
+                        合作
+                        <i class="icon-downarrow"></i>
+                    </a>
+                    <div class="dropdown-content" id="team" onmouseover="showTeamBlock()" onmouseleave="hideTeamBlock()"
+                        style="border-radius: 8px; display: none;">
+                        <div class="dropdownBtn">
+                            <a href="Team.html" on-link-mark="yes"
+                                style="font-weight:normal;font-family:'Trebuchet MS';display: block;">
+                                团队
+                            </a>
+                        </div>
+
+                        <div class="dropdownBtn">
+                            <a href="Collaboration.html" on-link-mark="yes"
+                                style="font-weight:normal;font-family:'Trebuchet MS';display: block;">
+                                合作
+                            </a>
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <div class="dropdown">
+                    <a href="#" one-link-mark="yes" class="dropbtn" onmouseover="showSuppBlock()"
+                        onmouseleave="hideSuppBlock()" id="our_team">
+                        其他
+                        <i class="icon-downarrow"></i>
+                    </a>
+                    <div class="dropdown-content" id="supp" onmouseover="showSuppBlock()" onmouseleave="hideSuppBlock()"
+                        style="border-radius: 8px; display: none;">
+                        <div class="dropdownBtn">
+                            <a href="Parts.html" on-link-mark="yes"
+                                style="font-weight:normal;font-family:'Trebuchet MS';display: block;">
+                                元件
+                            </a>
+                        </div>
+
+                        <div class="dropdownBtn">
+                            <a href="Notebook.html" on-link-mark="yes"
+                                style="font-weight:normal;font-family:'Trebuchet MS';display: block;">
+                                笔记
+                            </a>
+                        </div>
+
+
+                    </div>
+                </div>
+
+            </ul>
+        </div>
+    </nav>
+
+
+    <div id="parallax1" class="">
+
+        <div id="top"></div>
+
+    </div>
+
+
+    <div class="sections-container">
+        <aside class="sticky col-sm-2" style="display: block;">
+            <div id="sub-nav" class="sub-navigation-content">
+                <div class="sub-navigation-chapter cool-link2">
+                    <a class="main-nav-link" linkedidchapter="slide1-chapter1"
+                        onclick="jumpToTitle('slide1-chapter1',-1)">概述</a>
+                    <!------Chapter one -->
+                </div>
+                <div class="sub-navigation-chapter cool-link2">
+                    <a class="main-nav-link" linkedidchapter="slide1-chapter2"
+                        onclick="jumpToTitle('slide1-chapter2',-1)">预测器的构建</a>
+                    <!------Chapter Two -->
+                </div>
+                <div class="sub-navigation-chapter cool-link2">
+                    <a class="main-nav-link" linkedidchapter="slide1-chapter3"
+                        onclick="jumpToTitle('slide1-chapter3',-1)">VAE的构建</a>
+                    <!------Chapter Three -->
+                </div>
+                <div class="sub-navigation-chapter cool-link2">
+                    <a class="main-nav-link" linkedidchapter="slide1-chapter4"
+                        onclick="jumpToTitle('slide1-chapter4',-1)">遗传算法的设计与优化</a>
+                    <!------Chapter Three -->
+                </div>
+                
+            </div>
+        </aside>
+
+        <div class="carousel">
+
+            <div class="slider" style="transform: translateX(0%);">
+
+                <!------------------------------ section 1------------------------------------>
+                <section class="slide-sections" style="height: 100%;">
+
+                    <div class="main-body">
+                        <div class="main-body-content">
+                            <div id="slide1-chapter1">
+                                <h2 href='slide1-chapter1'>概述</h2>
+                                
+                                <p>本项目旨在利用计算方法挖掘启动子的特征，建立枯草芽孢杆菌从头合成启动子的设计与启动子强度分析系统，并实现设计特定强度的人工启动子的功能。</p>
+                                <p>经过前期的调研和讨论，我们决定分别使用两种方式生成启动子：通过缩小重构误差、提高分布相似性来学习训练样本特征的变分自编码器（Variational auto-encoder，VAE），和基于生物中的“淘汰与进化”的思想、并经过改进的进化算法——遗传算法(Genetic Algorithm，GA)。另一方面，我们还训练了一个强度预测网络，通过将其与生成模型组合使用，我们对生成的启动子进行约束，从而获得目标强度的启动子。整体模型框架如下图所示：</p>
+                                <div class="figure-container" style="text-align:center">
+                                    <img src="static/pictures/res_figure1.png" alt="">
+                                    <h4 style="text-align: center;margin-bottom: 5%;">图1 启动子强度分布情况</h4>
+                                </div>
+
+                            </div>
+                            <div>
+                                <h3>基于荧光蛋白相对强度归一化处理的文献数据</h3>
+                                <p>在收集天然启动子数据的同时，我们还通过收集多篇文献获得了文献启动子序列-强度数据。但由于不同文献表示相对强度的参考值不同，为了获得一致化的本地数据，我们从每组文献选取出中等强度的启动子，构建表达绿色荧光蛋白GFP的质粒进行表征，并将以枯草芽孢杆菌中典型的强启动子PvegI的强度定为100，不同文献启动子荧光蛋白相对强度及其归一化结果如图所示。
+                                </p>
+                                <div class="figure-container" style="text-align:center">
+                                    <img src="static/pictures/res_figure2.png" style="width:60%; ">
+                                    <h4 style="text-align: center;margin-bottom: 5%;font-size: 1.3rem;">图2 文献数据的一致化处理</h4>
+
+                                </div>
+                                <p>以实验测得的表达强度为标准将文献数据的强度进行统一，经过去除重复的启动子序列，并对其相对荧光强度处理（取log2）后，我们得到了578条经过实验验证的启动子数据集。
+                                </p>
+
+                            </div>
+                            <div id="slide1-chapter2">
+                                <h2 href='slide1-3'>预测器的构建</h2>
+                                <h3>模型训练</h3>
+                                <h4>数据集的获取与处理</h4>
+                                <p>根据方案Protocol中描述，前期结合启动子预测、转录组测序以及文献数据一致化处理，分别构建了启动子序列-转录强度数据库与序列-相对强度数据库。由于测得的强度数值差异过大，统一将强度数值进行取log2的操作。其中启动子序列-转录强度数据库包含4128条启动子与强度信息，序列-相对强度数据库包含578条启动子与强度信息。
+                                </p>
+                                <h4>模型训练与参数调整</h4>
+                                <p>分别利用启动子序列-转录强度数据库与序列-相对强度数据库对所构建的预测器进行训练。利用K-折交叉验证对模型的学习速率α、迭代次数epoch、批量大小batch-size、卷积核大小与数目、嵌入层维度等参数进行调整优化。
+                                </p>
+                                <p>
+                                    在训练过程中，我们发现：由启动子预测识别结合转录组测序获得的启动子序列-转录强度数据库，虽然数据量较大，启动子类型更丰富，但很难利用模型训练出有价值的序列与强度的对应关系，如下图所示：
+                                </p>
+                                <p>
+                                    相比之下，由文献收集结合实验室一致化获得的启动子序列-相对强度数据库能较好的训练模型，并能随着模型的改进和参数的调整，不断提高预测能力。
+                                </p>
+                                <p>
+                                    对此，我们分析有以下几点可能的原因：
+                                </p>
+                                <div
+                                    style="border-left: 6px solid #ccc!important;border-color: #2196F3!important;padding: 1%;margin: 3%;">
+                                    <ul>
+                                        <li style="margin: 2%;">
+                                            序列-转录强度数据库的获得经过启动子预测与转录组测序两步，影响数据准确度的误差因素更多，可能导致序列与强度的相关性降低。
+                                        </li>
+                                        <li style="margin: 2%;">
+                                            由于原核生物的多顺反子结构，一个启动子可能控制多个基因的表达，启动子强度和部分基因的转录强度关联性较低，给训练带来困难。
+                                        </li>
+                                        <li style="margin: 2%;">
+                                            序列-相对强度数据库的获得经过实验的一致化处理，由启动子调控的GFP基因的荧光表达强度与细胞生物量的比值作为启动子的相对强度，消除了其他因素的影响，序列与强度的相关性更强。
+                                        </li>
+                                    </ul>
+                                </div>
+                                <p>
+                                    因此，后续我们使用启动子序列-相对强度数据库作为模型的训练数据集。
+                                </p>
+                                <p>
+                                    在模型的参数调整过程中，我们在模型网络中加入Dropout层，在训练中暂时随机丢弃部分神经元以减少神经元之间复杂的共适应关系，防止过拟合现象，并加入BN(Batch
+                                    Normalization)层以加快模型拟合速度，提升泛化能力。最终，确定模型的关键参数学习速率α=0.001、迭代次数epoch=300、批量大小batch-size=32，卷积核数目dim=256，嵌入层维度embedding_dim=128。
+                                </p>
+                                <h3>模型评估</h3>
+                                <p>
+                                    为评估我们所构建的预测模型的定量预测能力，选用平均绝对值误差(Mean Absolute
+                                    Error，MAE)以计算预测值和观测值之间绝对误差的平均值，同时选用皮尔逊系数(Pearson product-moment correlation
+                                    coefficient，PCCs)以度量预测值和观测值之间的相关程度。即用MAE和PCCs作为模型预测性能的评估指标。（其中MAE的值域为[0,∞]，值越小表示误差越小。PCCs的值域为[-1,1]，值越大表示变量间相关性越高）
+                                </p>
+                                <p>
+                                    我们随机将数据集的80%数据作为训练集训练模型，将剩下的20%数据作为测试集测试模型性能，并使用K-折交叉验证(k=5)进一步验证。最终我们的预测模型在测试集上结果为MAE=0.8095，PCCs=0.6063。（效果优于2018年Wang等在NAR上报道的预测器性能，PCCs=0.514）
+                                </p>
+                                <p>
+                                    此外，为了进一步评估我们所构建的预测模型的性能，我们重构了回归算法常用的卷积神经网络(Convolutional Neural Network,
+                                    CNN)、支持向量机(Support Vector Machine，SVM)、XGBoost算法（eXtreme Gradient
+                                    Boosting）等多种模型，采用同样的训练及测试方式，作为评估模型性能的对照。
+                                </p>
+
+
+                                <h2 href='slide1-chapter3' id="slide1-chapter3">VAE的构建</h2>
+                                <h3>变分自编码器VAE</h3>
+                                <p>
+                                    如模型model中描述，我们构建了用于启动子生成的变分自编码器（Variational
+                                    auto-encoder，VAE）用于人工启动子序列的生成。使用全部启动子预测数据作为训练集，将重构损失和KL散度作为损失函数，使用Adam优化器训练1000epoch，损失函数的变化趋势和生成的启动子的示意图如下图所示（每4列分别代表一条序列中的A、C、G、T，从上到下为该序列的-60~0bp）。
+                                </p>
+                                <div class="figure-container" style="text-align:center">
+                                    <img src="static/pictures/res_figure6.png" style="width:100%; ">
+                                    <h4 style="text-align: center;margin-bottom: 5%;font-size: 1.3rem;">图6 VAE的训练过程与生成的启动子</h4>
+                                </div>
+                                <p>
+                                    将其取argmax后转换回DNA序列，即可获得模型生成的启动子。
+                                </p>
+                                <h3>遗传算法</h3>
+                                <p>
+                                    如模型model中描述，在遗传算法的建立过程中，共产生3了三个版本，相应的训练参数及结果如下：
+                                </p>
+
+                                <table>
+                                    <tr>
+                                        <th>版本号</th>
+                                        <th>每代个体</th>
+                                        <th>每代与目标种群整体PSSM距离</th>
+                                        <th>每代与个体聚类PSSM距离</th>
+                                        <th>强度范围</th>
+                                        <th>最终选择与整体分布距离</th>
+                                        <th>交叉概率</th>
+                                        <th>变异概率</th>
+                                        <th>代数</th>
+                                    </tr>
+                                    <tr>
+                                        <td>v1.0</td>
+                                        <td>100000</td>
+                                        <td>大于1</td>
+                                        <td>--</td>
+                                        <td>--</td>
+                                        <td>大于20</td>
+                                        <td>0.1</td>
+                                        <td>0.01</td>
+                                        <td>50</td>
+                                    </tr>
+                                    <tr>
+                                        <td>v2.0</td>
+                                        <td>100000</td>
+                                        <td>大于1</td>
+                                        <td>小于50</td>
+                                        <td>--</td>
+                                        <td>大于20</td>
+                                        <td>0.1</td>
+                                        <td>0.01</td>
+                                        <td>50</td>
+                                    </tr>
+                                    <tr>
+                                        <td>v2.0</td>
+                                        <td>100000</td>
+                                        <td>大于1</td>
+                                        <td>小于60</td>
+                                        <td>1~3</td>
+                                        <td>大于20</td>
+                                        <td>0.1</td>
+                                        <td>0.01</td>
+                                        <td>50</td>
+                                    </tr>
+                                </table>
+                                <p>结果：</p>
+                                <div>
+                                    <div class="figure-container" style="text-align:center">
+                                        <img src="static/pictures/ga_truth.png" style="width:100%; ">
+                                        <h4 style="text-align: center;margin-bottom: 5%;font-size: 1.3rem;">图7-1 ground truth序列标识图</h4>
+
+                                    </div>
+                                    <div class="figure-container" style="text-align:center">
+                                        <img src="static/pictures/ga1.png" style="width:100%; ">
+                                        <h4 style="text-align: center;margin-bottom: 5%;font-size: 1.3rem;">图7-2 遗传算法v1.0序列标识图</h4>
+
+                                    </div>
+                                    <div class="figure-container" style="text-align:center">
+                                        <img src="static/pictures/ga2.png" style="width:100%; ">
+                                        <h4 style="text-align: center;margin-bottom: 5%;font-size: 1.3rem;">图7-3 遗传算法v2.0序列标识图</h4>
+
+                                    </div>
+                                    <div class="figure-container" style="text-align:center">
+                                        <img src="static/pictures/ga3.png" style="width:100%; ">
+                                        <h4 style="text-align: center;margin-bottom: 5%;font-size: 1.3rem;">图7-4 遗传算法v3.0序列标识图</h4>
+
+                                    </div>
+                                </div>
+
+                                <p>评价：</p>
+
+
+                                <ul
+                                    style="border-left: 6px solid #ccc!important;border-color: #2196F3!important;margin: 2%;padding: 1%;">
+
+
+                                    <li style="margin: 2%;">1.遗传算法能够生成与目标种群具有相似概率分布的基因序列。</li>
+                                    <li style="margin: 2%;">
+                                        2.由于fitness函数淘汰了许多与整体有轻度差异的个体，保留了大部分与整体高度相似的个体，因此提取的特征较为单一。(见-10区，相比于ground
+                                        truth，许多不显著的特征被“灭绝”)</li>
+                                    <li style="margin: 2%;">3.由于生存下来的个体大多与目标群体中某个聚类相似，所以一些在ground
+                                        truth中不存在的模式在生成的序列中被凸显出来。</li>
+                                    <li style="margin: 2%;">
+                                        4.由于遗传算法的迭代性，预测准确度可以在迭代的过程中不断积累，最后得到强度较高的启动子种群(代价是每一代需要产生更多个体防止种群灭绝，会消耗更多的计算性能)。
+                                    </li>
+                                </ul>
+
+
+
+
+                            </div>
+                            <div id="slide1-chapter4">
+                                <h2 href='slide1-chapter4'>遗传算法的设计与优化</h2>
+                                <p>
+                                    将模型的不同模块分别构建好后，我们将其组合起来。为测试模型效果，我们进行中等强度启动子（log2x = 1-3）的生成，具体参数如下所示
+                                </p>
+                                <p>VAE</p>
+                                <p>
+                                    使用VAE生成4500个启动子序列，通过预测器筛选强度为1-3的启动子
+                                </p>
+                                <p>
+                                    遗传算法：
+                                </p>
+                                <div style="text-align:center">
+                                <table>
+                                    <tr>
+                                        <th>版本号</th>
+                                        <th>每代个体</th>
+                                        <th>每代与目标种群整体PSSM距离评分</th>
+                                        <th>每代与个体聚类PSSM距离评分</th>
+                                        <th>强度范围</th>
+                                        <th>最终选择与整体分布距离评分</th>
+                                        <th>交叉概率</th>
+                                        <th>变异概率</th>
+                                        <th>代数</th>
+                                    </tr>
+                                    <tr>
+                                        <td>v2.0</td>
+                                        <td>100000</td>
+                                        <td>大于1</td>
+                                        <td>小于60</td>
+                                        <td>1~3</td>
+                                        <td>大于20</td>
+                                        <td>0.1</td>
+                                        <td>0.01</td>
+                                        <td>50</td>
+                                    </tr>
+                                </table>
+                            </div>
+
+                                <p>
+                                    经过筛选后，最终生成了2396条序列
+                                </p>
+                                <p>随后我们对生成的序列进行了基于基序特征的分析，并以预测启动子库作为天然启动子数据集进行对照。
+                                </p>
+                                <h3>序列标识图对比</h3>
+                                <p>
+                                    序列标识图可以通过直观的方式表示出不同位置碱基的保守性。我们使用<a
+                                        href="http://weblogo.threeplusone.com/create.cgi">WebLogo提供的在线服务</a>分别生成了天然启动子、VAE生成的启动子（图中注释为VAE）、遗传算法生成的启动子（图中注释为GA）的序列标识图。
+                                </p>
+                                <div class="figure-container" style="text-align:center">
+                                    <img src="static/pictures/seq_compare.png" style="width:100%; ">
+                                    <h4 style="text-align: center;margin-bottom: 5%;font-size: 1.3rem;">图8 合成启动子与天然启动子的序列标识图对比</h4>
+
+                                </div>
+                                <p>
+                                    图中可以看出，在天然启动子中-10区和-35区有较为明显的特征，而这些特征也成功被我们的模型所识别到，并且相对于天然启动子，其保守性更强。
+                                </p>
+                                <h3>k–mer频率对比</h3>
+                                <p>
+                                    k-mer频率描述了序列中出现所有可能的k个核苷酸序列的频率，是生物信息分析中的一个重要的问题。下图表示了合成启动子与天然启动子的2、4、6、8-mer频率对比，横坐标为天然启动子的k-mer频率，纵坐标为合成启动子的k-mer频率，图中注释为二者之间的js散度（js散度越低表示两种分布越接近）。
+                                </p>
+                                <div class="figure-container" style="text-align:center">
+                                    <img src="static/pictures/kmer_compare.png" style="width:100%; ">
+                                    <h4 style="text-align: center;margin-bottom: 5%;">图9 合成启动子与天然启动子的k–mer频率对比</h4>
+
+                                </div>
+                                <h3>比较不同6bp基序的出现位置及频率</h3>
+                                <p>
+                                    除了对全部k-mer频率进行统计外，我们还选取了在天然启动子中出现频率较高的几个6bp基序，分析其在序列中的出现位置，其中包括最常见的-10区（TATAAT）基序和-35区（TTGACA）基序。
+                                </p>
+                                <div class="figure-container" style="text-align:center">
+                                    <img src="static/pictures/motif_compare.png" style="width:100%; ">
+                                    <h4 style="text-align: center;margin-bottom: 5%;">图10 不同6bp基序的位置分布</h4>
+                                </div>
+                                <p>
+                                    总之，从统计分析的层面看，我们所生成的启动子与天然启动子的特征相符，有在真正的细胞环境中发挥出启动子活性的潜力。
+                                </p>
+
+                            </div>
+                            <div id="slide1-chapter5">
+
+                                <h2>讨论</h2>
+                                <h3>转录组数据和文献数据的特点</h3>
+                                <p>在实验的过程中，我们发现通过文献调研和实验表征得到数据库尽管数据量较小，但相对于大量的使用转录组测序和启动子预测所获得的数据而言，其训练效果明显更好。我们曾尝试使用包括Vgg16在内的更复杂、学习能力更强的模型进行训练，但没有得到更好的效果，这说明限制模型效果的因素很可能在于数据本身的相关性。
+                                </p>
+                                <p>由于基因的表达强度受多种因素影响，启动子虽然在其中起到了较为重要的作用，但使用转录组测序的数据会受其他因素影响而使序列和强度之间的相关性降低。使用荧光蛋白虽然表征的是蛋白表达强度而转录强度，但由于表达载体在构建过程中排除了其他干扰项，因此启动子序列和表达强度之间的相关性更强。未来我们应着眼于寻找更多具有更高相关性的数据进行训练，以达到更好的效果。
+
+                                </p>
+                                <p>
+                                    >> 这与我们咨询相关专家得到的反馈相符 详见 <a href="Collaboration.html" >合作 collaboration</a>
+                                </p>
+                                <h3>模型合成启动子的分析</h3>
+                                <p>
+                                    如上文所述，从序列保守性、k-mer频率、典型基序的出现位置等角度来看，模型生成的启动子与天然启动子有着相似的特征。
+                                </p>
+                                <p>
+                                    但在分析的过程中，合成启动子也显示出一些与天然启动子有所不同的特点，如不同位置碱基的保守性更强、特定基序在某些位置的出现频率更高，这是否与启动子的强弱相关联，需要待后续通过实验的方式进一步确认。
+                                </p>
+                                <h3>合成启动子活性的验证分析</h3>
+                                <p>
+                                    我们原计划在模型构建完成后，通过选取生成的启动子重新构建GFP表达质粒的方式进行实验表征，以进一步验证模型的有效性，并指导我们对模型进行下一步的完善。但由于1月份天津市突发疫情，所需的实验材料因实验室封闭管理而无法送达，因此实验计划受到影响。待实验室恢复正常运行后，我们将完成对生成结果的进一步验证。
+                                </p>
+
+                            </div>
+
+
+
+
+
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+    <img id="socket" onclick="toTop()" src="static/pictures/top3.gif" style="position: fixed;position: fixed;bottom: 0vh;right: 5vw;width: 10%;
+    ;
+    cursor: pointer;z-index: 99; background-color: transparent;"></img>
+    <img id="socketFly" src="static/pictures/up.gif" style="position: fixed;position: fixed;bottom: 0vh;right: 5vw;width: 10%;
+    ;
+    cursor: pointer;z-index: 99; background-color: transparent;visibility: hidden;"></img>
+
+    <footer>
+        <svg class="waves" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+            <defs>
+                <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z">
+                </path>
+            </defs>
+            <g class="parallax">
+                <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(252, 204, 233, 0.9)"></use>
+                <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(181, 249, 238, 0.7)"></use>
+                <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(115, 193, 245, 0.5)"></use>
+                <use xlink:href="#gentle-wave" x="48" y="7" fill="rgba(110, 168, 181, 0.3)"></use>
+            </g>
+        </svg>
+        <div class="footer-items">
+            <div class="footer-item">
+                <h1>About Us</h1>
+                <p1><a href="Team.html">团队介绍</a></p1>
+            </div>
+            <div class="footer-item">
+                <h1>Address</h1>
+                <p2>天津大学</p2>
+                <br><br><br><br>
+                <h1>Helpful links</h1>
+                <a target="_blank" style="text-decoration:none;color: white" href="">Premotion Video</a>
+                <br>
+                <a target="_blank" style="text-decoration:none;color: white" href="Design.html">Design</a>
+                <br>
+                <a target="_blank" style="text-decoration:none;color: white" href="">Notebook</a>
+            </div>
+            <div class="footer-item footer-icons">
+                <div>
+                    <a target="_blank" href="https://user.qzone.qq.com/3116652779">
+                        <img src="https://2021.igem.org/wiki/images/3/3f/T--NEFU_China--QQ.png"  alt="">
+                    </a>
+                    <a target="_blank" href="">
+                        <img src="static/pictures/github.png" alt="">
+                    </a>
+                    <a class="footer-icons1" target="_blank" href="null">
+                        <img src="static/pictures/facebook.png" alt="">
+                    </a>
+                </div>
+                <!-- <div class="footer-icons2">
+                    <img src="static/pictures/logo1.png" alt="">
+                </div> -->
+            </div>
+        </div>
+    </footer>
+
+
+</body>
+<script>
+
+    function toTop() {
+        const socket = document.getElementById("socket")
+        const socketFly = document.getElementById("socketFly")
+        socket.style.visibility = 'hidden'
+        socketFly.style.visibility = 'visible'
+        flying = true
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        })
+        setTimeout(function () {
+            socket.style.visibility = 'visible'
+            socketFly.style.visibility = 'hidden'
+        }, 1000)
+
+    }
+
+    // and operator
+    function andCondition(p, q) {
+        if (p) {
+            if (q) {
+                return true;
+            }
+        }
+        return false;
+    }
+    function getElementTop(element) {
+        var actualTop = element.offsetTop;
+        var current = element.offsetParent;
+
+        while (current !== null) {
+            actualTop += current.offsetTop;
+            current = current.offsetParent;
+        }
+
+        return actualTop;
+    }
+
+    function jumpToTitle(titleName, location = -1) {
+        if (location == -1) {
+            // window.location.href = '#' + titleName;
+            element = document.getElementById(titleName)
+            height = getElementTop(element)
+            window.scrollTo({
+                top: height - 100,
+                behavior: 'smooth'
+            })
+        }
+        else {
+            window.scrollTo({
+                top: location,
+                behavior: 'smooth'
+            })
+        }
+        setTitleSelected(titleName)
+    }
+
+</script>
+
+<style>
+    #main_body {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 0px;
+        padding: 0px;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+        font-weight: 400;
+        color: #01090c;
+        text-transform: none;
+    }
+
+    .title {
+        text-align: center;
+        font-family: "Constantia", serif;
+        font-style: italic;
+        font-size: 320%;
+        font-weight: bold;
+        color: #484848;
+        text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.19);
+        margin-top: 3%;
+        margin-bottom: 3%;
+        line-height: 150%;
+    }
+
+    .subtitle {
+        text-align: center;
+        font-family: Helvetica, sans-serif;
+        font-size: 35px;
+        font-weight: normal;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .words_paragraph {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        text-indent: 36px;
+        text-align: justify;
+        font-size: 20px;
+        /*wiki上面p格式字体会变小很多，推测是字体原因*/
+        line-height: 30px;
+        margin-bottom: 20px;
+    }
+</style>
+<style>
+    a {
+    text-decoration: none;
+    color: #74aaf0;
+    background: none;
+    }
+    /* img{
+        box-shadow: rgb(50 50 93 / 25%) 0px 50px 100px -20px, rgb(0 0 0 / 30%) 0px 30px 60px -30px;
+    } */
+    table,
+    table tr th,
+    table tr td {
+        border: 1.5px solid #74aaf0;
+        margin: auto;
+        padding-left: 1%;
+        padding-right: 1%;
+    }
+
+    table {
+        /* width: 200px; */
+        min-height: 25px;
+        line-height: 25px;
+        text-align: center;
+        border-collapse: collapse;
+    }
+
+    /***文本部分样式***/
+    .bg {
+        background-color: #f5f5f5;
+        margin: 0px auto 20px auto;
+    }
+
+    #wavewrapper {
+        position: absolute;
+        bottom: 0;
+        z-index: 1;
+    }
+
+    #wavewrapper2 {
+        position: absolute;
+        bottom: 0;
+        z-index: 10;
+    }
+
+    /**********时间轴/子导航/进度条***********/
+    .sub-navigation-content {
+        padding: 2em 0;
+        margin-left: 20%;
+        /* border-right: solid 3px #FE9901; */
+        max-width: 220px;
+        display: block;
+    }
+</style>
+
+<script>
+    // // and operator
+    // function andCondition(p, q) {
+    //     if (p) {
+    //         if (q) {
+    //             return true;
+    //         }
+    //     }
+    //     return false;
+    // }
+
+
+    //获取滚动条位置
+    setInterval(scrollPosition, 500)
+    function scrollPosition() {
+        var t
+        if (andCondition(document.documentElement, document.documentElement.scrollTop)) {
+            t = document.documentElement.scrollTop;
+        } else if (document.body) {
+            t = document.body.scrollTop;
+        }
+        var width = window.innerWidth;
+        var height = window.innerHeight;
+        let elements = document.getElementsByClassName("main-nav-link")
+        for (let i = 0; i < elements.length; ++i) {
+            elements[i].className = "main-nav-link"
+        }
+        eps = 300
+        if (t < getElementTop(document.getElementById('slide1-chapter2')) - eps) {
+            elements[0].classList.add("active")
+        }
+        else if (t < getElementTop(document.getElementById('slide1-chapter3')) - eps) {
+            elements[1].classList.add("active")
+        }
+        else if (t < getElementTop(document.getElementById('slide1-chapter4')) - eps) {
+            elements[2].classList.add("active")
+
+        }
+        else if (t < getElementTop(document.getElementById('slide1-chapter5')) - eps) {
+            elements[3].classList.add("active")
+
+        }
+        else {
+            elements[4].classList.add("active")
+
+        }
+
+    }
+</script>
+
+<script>
+    /*****下拉菜单显示与隐藏**********/
+    function showProjectBlock() {
+        document.getElementById("project").style.display = "block"
+    }
+
+    function hideProjectBlock() {
+        document.getElementById("project").style.display = "none"
+    }
+    function showTeamBlock() {
+        document.getElementById("team").style.display = "block"
+    }
+
+    function hideTeamBlock() {
+        document.getElementById("team").style.display = "none"
+    }
+
+    function showSuppBlock() {
+        document.getElementById("supp").style.display = "block"
+    }
+
+    function hideSuppBlock() {
+        document.getElementById("supp").style.display = "none"
+    }
+    /**** navgation bar 滑动时缩小 ***/
+    const nav = document.querySelector('.nav')
+    window.addEventListener('scroll', fixNav)
+
+    function fixNav() {
+        if (window.scrollY > nav.offsetHeight + 150) {
+            nav.classList.add('active')
+        } else {
+            nav.classList.remove('active')
+        }
+    }
+
+</script>
+
+<style>
+    /**************文本和时间轴***************/
+
+    /************ Sub navigation  *********************/
+    aside {
+
+        float: left;
+        padding-top: 8em;
+    }
+
+    .grid-normal {
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: minmax(10px, 1fr) (minmax(50px, 300px))[5] minmax(10px, 1fr);
+        grid-template-columns: minmax(10px, 1fr) repeat(5, minmax(50px, 300px)) minmax(10px, 1fr);
+    }
+
+    .grid-aside {
+        -ms-grid-column: 2;
+        -ms-grid-column-span: 1;
+        grid-column: 2/3;
+        -ms-grid-row: 1;
+        grid-row-start: 1;
+    }
+
+    .sub-navigation-content {
+        padding: 2em 0;
+        /*border-right: solid 3px #FE9901;*/
+        max-width: 220px
+    }
+
+    .sub-navigation-chapter a {
+        color: #212832;
+        font-size: 1.0em;
+        padding: 0.3em 0.3em 0 0.5em;
+        display: block;
+        transition: transform 0.5s;
+    }
+
+    .sub-navigation-chapter a:hover {
+        color: #74aaf0;
+        transform: scale(1.1, 1.1);
+    }
+
+    a.main-nav-link.active {
+        font-weight: normal;
+        color: #74aaf0;
+        border-left: 6px solid #ccc !important;
+        border-color: #74aaf0 !important;
+    }
+
+    .main-nav-link {
+        cursor: pointer;
+    }
+
+    #to-top-arrow a,
+    #to-top-arrow a:visited,
+    #to-top-arrow a:active {
+        color: #ee786b;
+        font-size: 2em;
+        -webkit-transition: all 0.4s;
+        -o-transition: all 0.4s;
+        transition: all 0.4s;
+        padding: 1em 2em 0 2em;
+        display: block
+    }
+
+    #to-top-arrow a:hover {
+        color: #ee786b;
+        -webkit-transition: all 0.4s;
+        -o-transition: all 0.4s;
+        transition: all 0.4s;
+    }
+
+    /* Class that is added to subnav by JS to keep it sticky */
+    .sticky {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 1em;
+    }
+
+    /************ Carousel ***********************/
+    .sections-container {
+        width: 90%;
+        margin: auto;
+    }
+
+    .carousel {
+        overflow: hidden;
+        position: relative;
+        -ms-grid-column: 3;
+        -ms-grid-column-span: 4;
+        grid-column: 3/7;
+        -ms-grid-row: 1;
+        grid-row-start: 1;
+    }
+
+    .slider {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        width: 400%;
+        height: 100%;
+        -webkit-transition: all 0.5s ease-in-out;
+        -o-transition: all 0.5s ease-in-out;
+        transition: all 0.5s ease-in-out;
+    }
+
+    .slider section {
+        width: 25%;
+    }
+
+    /************* Main-body with content **********************/
+
+
+    .main-body {
+        /*padding: 0 0 1em 0;*/
+        padding-left: 10px;
+        padding-right: 130px;
+        /*text-align: center;*/
+        /*width: 100vh;*/
+        /*margin: 0 auto;*/
+    }
+
+    .main-body p {
+        text-align: justify;
+        padding-bottom: 1em;
+        font-size: 1.7rem;
+
+    }
+
+    .main-body h2 {
+        font-size: 3.3em;
+        padding: 0.5em 0 0.5em 0;
+        color: #74aaf0;
+        scroll-margin-top: 79px;
+        font-family: "geometos"
+            /*大标题*/
+    }
+
+    /* .main-body h3 {
+        padding-bottom: 0.5em;
+        font-size: 2.5em;
+    }
+
+    .main-body h4 {
+        font-style: italic;
+        font-size: 1.9em;
+    } */
+
+    */ .main-body li {
+        text-align: justify;
+        list-style-position: outside;
+        padding: 0.2em 0;
+    }
+
+    .references li {
+        text-align: left;
+        font-size: 0.9em;
+        font-weight: normal;
+    }
+    .figure-container h4{
+        font-size: 1.3rem;
+
+    }
+
+    .main-body ul,
+    .main-body ol {
+        padding-left: 1em;
+        padding-bottom: 0.8em;
+    }
+
+    .side-box-content {
+        background-color: #efefef;
+        padding: 1.5em;
+        margin-bottom: 1em;
+    }
+
+    .side-box-content p {
+        padding-bottom: 0;
+    }
+
+    #side-box-1,
+    #side-box-3 {
+        float: right;
+        width: 35%;
+    }
+
+    #side-box-2,
+    #side-box-4 {
+        width: 90%;
+    }
+
+
+    /*********头部header样式**********/
+    header {
+        background: url(static/pictures/head_img.png);
+        max-height: 360px;
+        background-position: center;
+    }
+
+    /***navigation bar 样式**/
+    .navbar-nav .dropdown-menu .navbar .dropdown-menu {
+        margin-top: 0;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0;
+        box-sizing: border-box;
+        padding-bottom: 50px;
+
+    }
+
+    .nav {
+        position: fixed;
+        background-color: #B4C7E7;
+        top: 0;
+        left: 0;
+        right: 0;
+        transition: all 0.3s ease-in-out;
+        box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
+        z-index: 999;
+        text-align: center;
+    }
+
+    .nav .container {
+        width: 80vw;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 2px 0;
+        transition: all 0.3s ease-in-out;
+        margin-top: 12px;
+    }
+
+    .nav ul {
+        display: flex;
+        list-style-type: none;
+        align-items: center;
+        justify-content: flex-start;
+        line-height: 2rem;
+        justify-content: space-evenly;
+        width: 100%;
+        margin: 0.3em 0 0 1.6em;
+        padding: 0;
+    }
+
+    .nav a {
+        color: #fff;
+        text-decoration: none;
+        padding: 7px 17px;
+        transition: all 0.3s ease-in-out;
+        font-weight: bold;
+        font-size: 1.5rem;
+    }
+
+    .nav.active {
+        background-color: #DAE3F3;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .nav.active a {
+        color: #000;
+    }
+
+    .nav.active .container {
+        padding: 0px 0;
+    }
+
+    .nav a.current,
+    .nav a:hover {
+        color: #0c291f;
+        font-weight: bold;
+    }
+
+    .dropdown {
+        display: inline-block;
+        z-index: 10001 !important;
+    }
+
+    .icon-downarrow {
+        display: inline-block;
+        color: white;
+        width: 6px;
+        height: 6px;
+        border-left-width: 2px;
+        border-left-style: solid;
+        border-left-color: white;
+        border-bottom-width: 2px;
+        border-bottom-style: solid;
+        border-bottom-color: white;
+        transform: rotate(-45deg);
+        margin-top: 0px;
+        margin-bottom: 4px;
+        margin-left: 6px;
+
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+            rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+            rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+        line-height: initial;
+
+    }
+
+    .dropdownBtn a {
+        color: black;
+        border-radius: 5px;
+    }
+
+    .dropdownBtn:hover a {
+        color: white;
+        background: #133470 !important;
+        border-radius: 5px;
+    }
+
+    .dropbtn {
+        display: inline-block;
+        color: white;
+        text-align: center;
+        padding-top: 14px;
+        padding-right: 30px;
+        padding-bottom: 14px;
+        padding-left: 30px;
+        text-decoration: none;
+        text-decoration-line: none;
+        text-decoration-thickness: initial;
+        text-decoration-style: initial;
+        text-decoration-color: initial;
+        font-size: 24px;
+        font-weight: bold;
+
+    }
+
+
+
+    .splitLeft {
+        position: fixed;
+        width: 200px;
+        height: 55px;
+        background-color: #c4cef8c9;
+        margin-top: 400px;
+        margin-left: -10px;
+        border-radius: 2px;
+        transition: width 0.5s;
+        -webkit-transition: width 0.5s;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+        cursor: pointer;
+    }
+
+    .barText {
+        color: #fff;
+        font-family: 'Droid Sans', sans-serif;
+        font-size: 16px;
+        font-weight: bold;
+        transition: width 0.5s;
+        float: right;
+        -webkit-transition: width 0.5s;
+        position: relative;
+        top: 15px;
+        left: -25px;
+    }
+
+    .content img {
+        max-width: 66%;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    }
+
+    .content video {
+        width: 66%;
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    }
+
+    .content {
+        max-width: 60vw;
+        margin: 60px auto;
+    }
+
+    .content h1 {
+        margin: 0;
+        color: rgb(181, 253, 229);
+        line-height: 1;
+        font-size: 60px;
+        font-weight: bolder;
+    }
+
+    .content h2 {
+        margin: 0;
+        color: rgb(181, 253, 229);
+        line-height: 1;
+        font-size: 45px;
+        font-weight: bold;
+    }
+
+    .content h3 {
+        line-height: 1;
+        font-weight: bold;
+        font-size: 27px;
+        color: rgb(181, 253, 229);
+    }
+
+    .content h4 {
+        text-align: center;
+        color: white;
+    }
+
+    .content small {
+        color: #555;
+        font-style: italic;
+    }
+
+    .content p {
+        color: white;
+        text-indent: 3em;
+    }
+
+    .content embed {
+        max-width: 100%;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    }
+
+    .content a:link {
+        color: rgb(181, 253, 229);
+    }
+
+    /********************************* Footer ***************************************/
+
+    .contact-info {
+        background-color: #212832;
+        /*position: fixed;*/
+    }
+
+    .contact-info-content {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-pack: distribute;
+        justify-content: space-around;
+        padding: 1.9em 1em;
+
+    }
+
+    .box {
+        width: 20%;
+        text-align: justify;
+    }
+
+    .box h3 {
+        font-size: 1.875em;
+        padding: 0.5em;
+        color: white;
+    }
+
+    .box h4 {
+        font-size: 1.3em;
+        padding: 5px 0;
+        color: white;
+        text-indent: 1em;
+    }
+
+    .box p {
+        color: white;
+        font-size: 1em;
+        padding: 0 1em;
+    }
+
+    .social-media-icons {
+        padding: 0 0.3em;
+        font-size: 3em;
+    }
+
+    .social-media-icons a,
+    .social-media-icons a:active,
+    .social-media-icons a:visited,
+    .box a,
+    .box a:active,
+    .box a:visited {
+        color: white;
+        -webkit-transition: all 0.3s;
+        -o-transition: all 0.3s;
+        transition: all 0.3s;
+    }
+
+    .social-media-icons a:hover,
+    .box a:hover {
+        color: #ee786b;
+        -webkit-transition: all 0.3s;
+        -o-transition: all 0.3s;
+        transition: all 0.3s;
+    }
+</style>
