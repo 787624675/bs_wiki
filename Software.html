@@ -7,7 +7,7 @@
 
     <title>AI-Promoters 主页</title>
     <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
 
     <script src="static/js/jquery-3.6.0.js"></script>
     <script src="static/js/jquery-ui.js"></script>
@@ -65,6 +65,9 @@
     </style>
 
     <style>
+        .zoom {
+            zoom: 0.6;
+        }
         body {
             margin: 0;
             padding: 0;
@@ -72,6 +75,7 @@
             flex-direction: column;
             height: 100vh;
             overflow-x: hidden;
+
         }
 
         main {
@@ -286,6 +290,8 @@
                     </div>
                 </div>
                 <li><a href="Model.html" id="medal">建模</a></li>
+                <li><a href="Software.html" id="software">软件</a></li>
+                <li><a href="Team.html" id="team">团队与合作</a></li>
                 <div class="dropdown">
                     <a href="#" one-link-mark="yes" class="dropbtn" onmouseover="showSuppBlock()"
                         onmouseleave="hideSuppBlock()" id="our_team">
@@ -297,26 +303,20 @@
                         <div class="dropdownBtn">
                             <a href="Parts.html" on-link-mark="yes"
                                 style="font-weight:normal;font-family:'Trebuchet MS';display: block;">
-                                元件 Parts
+                                元件
                             </a>
                         </div>
 
                         <div class="dropdownBtn">
                             <a href="Collaboration.html" on-link-mark="yes"
                                 style="font-weight:normal;font-family:'Trebuchet MS';display: block;">
-                                合作 Collaboration
+                                合作
                             </a>
                         </div>
 
-                        <div class="dropdownBtn">
-                            <a href="Software.html" on-link-mark="yes"
-                                style="font-weight:normal;font-family:'Trebuchet MS';display: block;">
-                                软件 Software
-                            </a>
-                        </div>
                     </div>
                 </div>
-                <li><a href="Team.html" id="team">团队与合作</a></li>
+                
             </ul>
         </div>
     </nav>
@@ -338,8 +338,36 @@
                 <section class="slide-sections" style="height: 100%;">
                     <div class="main-body">
                         <h2>使用提示</h2>
-                        <p>VAE生成器：</p>
+                        <p>点击悬浮的三个圆形按钮分别可以添加三种不同的任务，分别是：</p>
+                        <p>VAE启动子生成，启动子强度预测，遗传算法</p>
+                        <p>VAE启动子生成器：</p>
                         <p>您可以输入启动子序列来生成新的启动子，您可以选择粘贴序列或上传文件；如果没有序列输入，服务器将使用我们训练的模型生成类似启动子的序列</p>
+                        <p>启动子强度预测：</p>
+                        <p>您需要输入至少一条序列</p>
+                        <p>遗传算法：</p>
+                        <p>如果您没有提交任何参数，算法将以默认参数执行；</p>
+                        <p>如果必要参数缺省，将以默认值填补；</p>
+                        <p>必要参数及默认值：</p>
+                        <table>
+                            <tr>
+                                <th>每代个体</th>
+                                <th>迭代次数</th>
+                                <th>相近分数-每代</th>
+                                <th>相近分数-最终</th>
+                                <th>交叉概率</th>
+                                <th>变异概率</th>
+                            </tr>
+                            <tr>
+                                <td>1000</td>
+                                <td>10</td>
+                                <td>1</td>
+                                <td>10</td>
+                                <td>0.1</td>
+                                <td>0.01</td>
+                            </tr>
+                        </table>
+                        <p>添加任务后，可点击任务列表中的条目查看任务状态和执行结果</p>
+                        <p>如果多次执行失败，请联系我们，或从github下载模型或代码在本地运行。</p>
                         <h2>任务列表</h2>
 
                         <div id="contents"></div>
@@ -390,8 +418,8 @@
                         <img src="https://2021.igem.org/wiki/images/f/f6/T--NEFU_China--weixin.png" alt="">
                     </a>
                     <a class="footer-icons1" target="_blank"
-                        href="https://www.facebook.com/profile.php?id=100070629408133">
-                        <img src="https://2021.igem.org/wiki/images/b/b5/T--NEFU_China--facebook.png" alt="">
+                        href="null">
+                        <img src="static/pictures/facebook.png" alt="">
                     </a>
                 </div>
                 <div class="footer-icons2">
@@ -477,33 +505,17 @@
         </form>
     </div>
 
-
-    <div id="users-contain" class="ui-widget">
-        <h1>Existing Users:</h1>
-        <table id="users" class="ui-widget ui-widget-content">
-            <thead>
-                <tr class="ui-widget-header ">
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Password</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>John Doe</td>
-                    <td><a href="/cdn-cgi/l/email-protection" class="__cf_email__"
-                            data-cfemail="eb81848385c58f848eab8e938a869b878ec5888486">[email&#160;protected]</a></td>
-                    <td>johndoe1</td>
-                </tr>
-            </tbody>
-        </table>
+    <div id="dialog-res" title="结果">
+        <div id="contentRes"></div>
     </div>
-    <button id="create-user">Create new user</button>
+
 
 
     <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
 </body>
 <script>
+    var datas = new Array()
+    var dialogRes
     $(function () {
         var dialog, form, dialogPred, dialogGA,
 
@@ -591,7 +603,7 @@
             width: 350,
             modal: true,
             buttons: {
-                "Create an account": addPredTask,
+                "Submit": addPredTask,
                 Cancel: function () {
                     dialogPred.dialog("close");
                 }
@@ -608,7 +620,7 @@
             width: 350,
             modal: true,
             buttons: {
-                "Create an account": addGATask,
+                "Submit": addGATask,
                 Cancel: function () {
                     dialogGA.dialog("close");
                 }
@@ -652,7 +664,7 @@
             /****显示表单窗口****/
             var p = document.getElementById("contents")
             content = ""
-            content += "<div style = 'background-color: #8FDED0; border-radius: 3%; padding : 2rem; margin:2rem'>"
+            content += "<div style = 'background-color: #D5E0E2; border-radius: 3%; padding : 2rem; margin:2rem' onclick = 'showRes(" + cnt + ")'>"
             content += "<p>任务类型：</p>"
             content += "<p>VAE启动子生成</p>"
             content += "<p>" + "id = 'task" + cnt + "'</p>"
@@ -665,7 +677,7 @@
             var filename = f.value; // 'C:\fakepath\test.png'
             console.log(filename)
             dialog.dialog("close");
-            window.scrollTo(0,document.body.scrollHeight-1950)
+            window.scrollTo(0, document.body.scrollHeight - 1750)
 
         }
         function addPredTask() {
@@ -673,7 +685,7 @@
             /****显示表单窗口****/
             var p = document.getElementById("contents")
             content = ""
-            content += "<div style = 'background-color: #8FDED0; border-radius: 3%; padding : 2rem; margin:2rem'>"
+            content += "<div style = 'background-color: #D5E0E2; border-radius: 3%; padding : 2rem; margin:2rem'>"
             content += "<p>任务类型：</p>"
             content += "<p>VAE启动子生成</p>"
             content += "<p>" + "id = 'task" + cnt + "'</p>"
@@ -682,6 +694,7 @@
             content += "</div>"
             p.innerHTML += content
             dialogPred.dialog("close");
+            window.scrollTo(0, document.body.scrollHeight - 1750)
 
         }
         function addGATask() {
@@ -689,7 +702,7 @@
             /****显示表单窗口****/
             var p = document.getElementById("contents")
             content = ""
-            content += "<div style = 'background-color: #8FDED0; border-radius: 3%; padding : 2rem; margin:2rem'>"
+            content += "<div style = 'background-color: #D5E0E2; border-radius: 3%; padding : 2rem; margin:2rem'>"
             content += "<p>任务类型：</p>"
             content += "<p>VAE启动子生成</p>"
             content += "<p>" + "id = 'task" + cnt + "'</p>"
@@ -698,10 +711,33 @@
             content += "</div>"
             p.innerHTML += content
             dialogGA.dialog("close");
-            window.scrollTo(0,document.body.scrollHeight)
+            window.scrollTo(0, document.body.scrollHeight-1750)
 
         }
+
+        dialogRes = $("#dialog-res").dialog({
+            autoOpen: false,
+            height: 400,
+            width: 350,
+            modal: true,
+            buttons: {
+                "下载结果": addUser,
+                Cancel: function () {
+                    dialogRes.dialog("close");
+                }
+            },
+            close: function () {
+                form[0].reset();
+                allFields.removeClass("ui-state-error");
+            }
+        });
+
     });
+    function showRes(num) {
+        console.log(num)
+        dialogRes.dialog('open')
+
+    }
 
 </script>
 <style>
