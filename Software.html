@@ -373,9 +373,9 @@
     <img src="static/pictures/vae_btn1.png" id="vaeImg" class="SlideImage1"
         style="margin-left: 22%;margin-top: 30%;border-radius: 50%;">
     <img src="static/pictures/pred_btn1.png" id="predImg" class="SlideImage1"
-        style="margin-left: 42%;margin-top: 30%;border-radius: 50%;" onclick="addPredTask()">
+        style="margin-left: 42%;margin-top: 30%;border-radius: 50%;">
     <img src="static/pictures/ga_btn1.png" id="gaImg" class="SlideImage1"
-        style="margin-left: 62%;margin-top: 30%;border-radius: 50%;" onclick="addGATask()">
+        style="margin-left: 62%;margin-top: 30%;border-radius: 50%;">
 
     <div class="sections-container">
         <div class="carousel">
@@ -483,17 +483,15 @@
 
         <form>
             <fieldset>
-                <label for="name">输入序列(可选)</label>
-                <input type="text" name="name" id="name" value="Jane Smith"
+                <label for="seqInV">输入序列(可选)</label>
+                <input type="text" name="seqInV" id="seqInV" value="Jane Smith"
                     class="text ui-widget-content ui-corner-all">
-                <label for="file">上传文件(可选)</label>
-                <input type="file" name="file" id="file" class="text ui-widget-content ui-corner-all">
-                <label for="email">Email</label>
-                <input type="text" name="email" id="email" value="jane@smith.com"
+                <label for="fileV">上传文件(可选)</label>
+                <input type="file" name="fileV" id="fileV" class="text ui-widget-content ui-corner-all">
+                <label for="emailV">Email</label>
+                <input type="text" name="emailV" id="emailV" value="jane@smith.com"
                     class="text ui-widget-content ui-corner-all">
-                <label for="password">Password</label>
-                <input type="password" name="password" id="password" value="xxxxxxx"
-                    class="text ui-widget-content ui-corner-all">
+               
 
                 <!-- Allow form submission with keyboard without duplicating the dialog button -->
                 <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
@@ -506,13 +504,13 @@
 
         <form>
             <fieldset>
-                <label for="name">输入序列(可选)</label>
-                <input type="text" name="name" id="name" value="Jane Smith"
+                <label for="seqInP">输入序列(可选)</label>
+                <input type="text" name="seqInP" id="seqInP" value="Jane Smith"
                     class="text ui-widget-content ui-corner-all">
-                <label for="file">上传文件(可选)</label>
+                <label for="filePred">上传文件(可选)</label>
                 <input type="file" name="filePred" id="filePred" class="text ui-widget-content ui-corner-all">
-                <label for="email">Email</label>
-                <input type="text" name="email" id="email" value="jane@smith.com"
+                <label for="emailP">Email</label>
+                <input type="text" name="emailP" id="emailP" value="jane@smith.com"
                     class="text ui-widget-content ui-corner-all">
                 <label for="password">Password</label>
                 <input type="password" name="password" id="password" value="xxxxxxx"
@@ -529,16 +527,39 @@
 
         <form>
             <fieldset>
-                <label for="name">输入序列(可选)</label>
-                <input type="text" name="name" id="name" value="Jane Smith"
+                <label for="num">每代种群数量</label>
+                <input type="number" name="num" id="num" value=1000 class="text ui-widget-content ui-corner-all">
+                <label for="iter">代数</label>
+                <input type="number" name="iter" id="iter" value=10 class="text ui-widget-content ui-corner-all">
+                <label for="select1">相近分数-每代</label>
+                <input type="number" name="select1" id="select1" value=1 class="text ui-widget-content ui-corner-all">
+                <label for="select2">差异分数-每代</label>
+                <input type="number" name="select2" id="select2" value=-1 class="text ui-widget-content ui-corner-all">
+                <label for="select3">强度范围-每代</label>
+                <input type="number" name="select3" id="select3" value=-1 class="text ui-widget-content ui-corner-all">
+                <label for="select11">相近分数-最终</label>
+                <input type="number" name="select11" id="select11" value=1 class="text ui-widget-content ui-corner-all">
+                <label for="select22">差异分数-最终</label>
+                <input type="number" name="select22" id="select22" value=-1 class="text ui-widget-content ui-corner-all">
+                <label for="select33">强度范围-最终</label>
+                <input type="number" name="select33" id="select33" value=-1 class="text ui-widget-content ui-corner-all">
+                <label for="pos1">交叉位置</label>
+                <input type="number" name="pos1" id="pos1" value=-1 class="text ui-widget-content ui-corner-all">
+                <label for="prob1">交叉概率</label>
+                <input type="number" name="prob1" id="prob1" value=-1 class="text ui-widget-content ui-corner-all">
+                <label for="pos2">变异位置</label>
+                <input type="number" name="pos2" id="pos2" value=-1 class="text ui-widget-content ui-corner-all">
+                <label for="prob2">变异概率</label>
+                <input type="number" name="prob2" id="prob2" value=-1 class="text ui-widget-content ui-corner-all">
+                <label for="rule2">变异规则(可选)</label>
+                <input type="text" name="rule2" id="rule2" value="{'A':['C','G','T'],'C':['A','G','T'],'G':['A','C','T'],'T':['A','C','G']}" class="text ui-widget-content ui-corner-all">
+                <label for="seqin">输入序列(可选)</label>
+                <input type="text" name="seqin" id="seqin" value=""
                     class="text ui-widget-content ui-corner-all">
-                <label for="file">上传文件(可选)</label>
+                <label for="fileGA">上传文件(可选)</label>
                 <input type="file" name="fileGA" id="fileGA" class="text ui-widget-content ui-corner-all">
                 <label for="email">Email</label>
                 <input type="text" name="email" id="email" value="jane@smith.com"
-                    class="text ui-widget-content ui-corner-all">
-                <label for="password">Password</label>
-                <input type="password" name="password" id="password" value="xxxxxxx"
                     class="text ui-widget-content ui-corner-all">
 
                 <!-- Allow form submission with keyboard without duplicating the dialog button -->
@@ -723,19 +744,47 @@
             content += "<p>VAE启动子生成</p>"
             content += "<p>" + "id = 'task" + cnt + "'</p>"
             content += "<p id = 'task" + cnt + "'>状态：OK</p>"
-            cnt += 1
+
             content += "</div>"
             p.innerHTML += content
-            var formData = new FormData();
-            var f = document.getElementById('file');
-            var filename = f.value; // 'C:\fakepath\test.png'
-            console.log(filename)
             dialog.dialog("close");
-            height = getElementTop(document.getElementById('task' + (cnt - 1)));
+            height = getElementTop(document.getElementById('task' + (cnt)));
             window.scrollTo({
                 top: height - eps,
                 behavior: 'smooth'
             })
+
+            var seqIn = document.getElementById("seqInV").value;
+            var files = document.getElementById("fileV").files;
+            var predMail = document.getElementById("emailV").value;
+            console.log(files);
+            var formdata = new FormData();
+            formdata.append("seqIn",seqIn)
+            formdata.append("file", files[0])
+            formdata.append("mail", predMail)
+
+            $.ajax({
+                url: "http://82.157.169.147:5000/vae1",
+                type: "post",
+                data: formdata,
+                contentType: false, //- 必须false才会自动加上正确的Content-Type
+                processData: false, //- 必须false才会避开jQuery对 formdata 的默认处理,XMLHttpRequest会对 formdata 进行正确的处理
+                success: function (res) {
+                    console.log(res)
+                    // res = JSON.parse(res);
+                    // if (res.success) {
+                    //     alert("ok");
+                    // } else {
+                    //     alert(res.content)
+                    // }
+                    datas[cnt] = res
+                    console.log(datas)
+                    cnt += 1
+                },
+                error: function () {
+                    alert("Error occurred 输入错误或响应失败");
+                }
+            });
 
         }
         function addPredTask() {
@@ -743,41 +792,126 @@
             /****显示表单窗口****/
             var p = document.getElementById("contents")
             content = ""
-            content += "<div style = 'background-color: #D5E0E2; border-radius: 3%; padding : 2rem; margin:2rem'>"
+            content += "<div style = 'background-color: #D5E0E2; border-radius: 3%; padding : 2rem; margin:2rem' onclick = 'showRes(" + cnt + ")'>"
             content += "<p>任务类型：</p>"
             content += "<p>VAE启动子生成</p>"
             content += "<p>" + "id = 'task" + cnt + "'</p>"
             content += "<p id = 'task" + cnt + "'>状态：OK</p>"
-            cnt += 1
+
             content += "</div>"
             p.innerHTML += content
             dialogPred.dialog("close");
-            height = getElementTop(document.getElementById('task' + (cnt - 1)));
+            height = getElementTop(document.getElementById('task' + (cnt)));
             window.scrollTo({
                 top: height - eps,
                 behavior: 'smooth'
             })
+            var predIn = document.getElementById("seqInP").value;
+            var files = document.getElementById("filePred").files;
+            var predMail = document.getElementById("emailP").value;
+            console.log(files);
+            var formdata = new FormData();
+            formdata.append("seqIn",predIn)
+            formdata.append("file", files[0])
+            formdata.append("mail", predMail)
+
+            $.ajax({
+                url: "http://82.157.169.147:5000/pred1",
+                type: "post",
+                data: formdata,
+                contentType: false, //- 必须false才会自动加上正确的Content-Type
+                processData: false, //- 必须false才会避开jQuery对 formdata 的默认处理,XMLHttpRequest会对 formdata 进行正确的处理
+                success: function (res) {
+                    console.log(res)
+                    // res = JSON.parse(res);
+                    // if (res.success) {
+                    //     alert("ok");
+                    // } else {
+                    //     alert(res.content)
+                    // }
+                    datas[cnt] = res
+                    console.log(datas)
+                    cnt += 1
+                },
+                error: function () {
+                    alert("Error occurred 输入错误或响应失败");
+                }
+            });
 
         }
         function addGATask() {
             /****显示表单窗口****/
-            /****显示表单窗口****/
             var p = document.getElementById("contents")
             content = ""
-            content += "<div style = 'background-color: #D5E0E2; border-radius: 3%; padding : 2rem; margin:2rem'>"
+            content += "<div style = 'background-color: #D5E0E2; border-radius: 3%; padding : 2rem; margin:2rem' onclick = 'showRes(" + cnt + ")'>"
             content += "<p>任务类型：</p>"
             content += "<p>VAE启动子生成</p>"
             content += "<p>" + "id = 'task" + cnt + "'</p>"
             content += "<p id = 'task" + cnt + "'>状态：OK</p>"
-            cnt += 1
             content += "</div>"
             p.innerHTML += content
             dialogGA.dialog("close");
-            height = getElementTop(document.getElementById('task' + (cnt - 1)));
+            height = getElementTop(document.getElementById('task' + (cnt)));
             window.scrollTo({
                 top: height - eps,
                 behavior: 'smooth'
             })
+            var num = document.getElementById("num").value;
+            var iter = document.getElementById("iter").value;
+            var select1 = document.getElementById("select1").value;
+            var select2 = document.getElementById("select2").value;
+            var select3 = document.getElementById("select3").value;
+            var select11 = document.getElementById("select11").value;
+            var select22 = document.getElementById("select22").value;
+            var select33 = document.getElementById("select33").value;
+            var pos1 =  document.getElementById("pos1").value;
+            var pos2 = document.getElementById("pos2").value;
+            var prob1 =  document.getElementById("prob1").value;
+            var prob2 = document.getElementById("prob2").value;
+            var rule2 = document.getElementById("rule2").value;
+            var files = document.getElementById("fileGA").files;
+            
+            console.log(files);
+            var formdata = new FormData();
+            
+            formdata.append("num",num)
+            formdata.append("iter",iter)
+            formdata.append("select1",select1)
+            formdata.append("select2",select2)
+            formdata.append("select3",select3)
+            formdata.append("select11",select11)
+            formdata.append("select22",select22)
+            formdata.append("select33",select33)
+            formdata.append("pos1",pos1)
+            formdata.append("pos2",pos2)
+            formdata.append("prob1",prob1)
+            formdata.append("prob2",prob2)
+            formdata.append("rule2",rule2)
+            formdata.append("fileGA", files[0])
+
+            $.ajax({
+                url: "http://82.157.169.147:5000/ga",
+                type: "post",
+                data: formdata,
+                contentType: false, //- 必须false才会自动加上正确的Content-Type
+                processData: false, //- 必须false才会避开jQuery对 formdata 的默认处理,XMLHttpRequest会对 formdata 进行正确的处理
+                success: function (res) {
+                    console.log(res)
+                    // res = JSON.parse(res);
+                    // if (res.success) {
+                    //     alert("ok");
+                    // } else {
+                    //     alert(res.content)
+                    // }
+                    datas[cnt] = res
+                    console.log(datas)
+                    cnt += 1
+                },
+                error: function () {
+                    alert("Error occurred 输入错误或响应失败");
+                }
+            });
+            
 
         }
 
@@ -801,6 +935,8 @@
     });
     function showRes(num) {
         console.log(num)
+        var p = document.getElementById("contentRes")
+        p.innerHTML = datas[num]
         dialogRes.dialog('open')
 
     }

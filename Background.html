@@ -7,8 +7,15 @@
     <title>AI-Promoters 主页</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src='static/js/jquery.parallax-1.1.3.js'></script>
+
+    <link rel="stylesheet" href="static/css/bootstrap.css">
 
     <style>
+        .zoom {
+            zoom: 0.6;
+        }
+
         body {
             margin: 0;
             padding: 0;
@@ -16,6 +23,8 @@
             flex-direction: column;
             height: 100vh;
             overflow-x: hidden;
+
+
         }
 
         main {
@@ -109,20 +118,20 @@
 
         .footer-items h1 {
             color: #fff;
-            font-size: 50px;
+            font-size: 30px;
             margin: 0px 0px 10px 0;
         }
 
         .footer-items p {
             color: #fff;
-            font-size: 20px;
+            font-size: 15px;
             margin: 10px 20px 10px 0;
             text-decoration: none;
         }
 
         .footer-items p1 {
             color: #fff;
-            font-size: 28px;
+            font-size: 20px;
             margin: 10px 20px 10px 0;
             text-align: justify
         }
@@ -169,7 +178,7 @@
 <style>
     /***头图**/
     #parallax1 {
-        background-image: url(static/pictures/result1.png);
+        background-image: url(static/pictures/model.png);
         background-attachment: fixed;
         background-size: 100%;
         background-color: #f5f5f5;
@@ -224,14 +233,38 @@
                         <div class="dropdownBtn">
                             <a href="Conclusion.html" on-link-mark="yes"
                                 style="font-weight:normal;font-family:'Trebuchet MS';display: block;">
-                                结论 Conclusion
+                                结论
                             </a>
                         </div>
                     </div>
                 </div>
                 <li><a href="Model.html" id="model">建模</a></li>
                 <li><a href="Software.html" id="software">软件</a></li>
-                <li><a href="Team.html" id="team">团队与合作</a></li>
+                <div class="dropdown">
+                    <a href="#" one-link-mark="yes" class="dropbtn" onmouseover="showTeamBlock()"
+                        onmouseleave="hideTeamBlock()" id="our_team">
+                        合作
+                        <i class="icon-downarrow"></i>
+                    </a>
+                    <div class="dropdown-content" id="team" onmouseover="showTeamBlock()" onmouseleave="hideTeamBlock()"
+                        style="border-radius: 8px; display: none;">
+                        <div class="dropdownBtn">
+                            <a href="Team.html" on-link-mark="yes"
+                                style="font-weight:normal;font-family:'Trebuchet MS';display: block;">
+                                团队
+                            </a>
+                        </div>
+
+                        <div class="dropdownBtn">
+                            <a href="Collaboration.html" on-link-mark="yes"
+                                style="font-weight:normal;font-family:'Trebuchet MS';display: block;">
+                                合作
+                            </a>
+                        </div>
+
+
+                    </div>
+                </div>
 
                 <div class="dropdown">
                     <a href="#" one-link-mark="yes" class="dropbtn" onmouseover="showSuppBlock()"
@@ -249,9 +282,9 @@
                         </div>
 
                         <div class="dropdownBtn">
-                            <a href="Collaboration.html" on-link-mark="yes"
+                            <a href="Notebook.html" on-link-mark="yes"
                                 style="font-weight:normal;font-family:'Trebuchet MS';display: block;">
-                                合作
+                                笔记
                             </a>
                         </div>
 
@@ -272,33 +305,29 @@
 
 
     <div class="sections-container">
-        <aside class="sticky" style="display: block;">
+        <aside class="sticky col-sm-2" style="display: block;">
             <div id="sub-nav" class="sub-navigation-content">
                 <div class="sub-navigation-chapter cool-link2">
                     <a class="main-nav-link" linkedidchapter="slide1-chapter1"
-                        onclick="jumpToTitle('slide1-chapter1',2000)">数据准备</a>
+                        onclick="jumpToTitle('slide1-chapter1',-1)">概述</a>
                     <!------Chapter one -->
                 </div>
                 <div class="sub-navigation-chapter cool-link2">
                     <a class="main-nav-link" linkedidchapter="slide1-chapter2"
-                        onclick="jumpToTitle('slide1-chapter2',3650)">预测器的训练及评估</a>
+                        onclick="jumpToTitle('slide1-chapter2',-1)">预测器的构建</a>
                     <!------Chapter Two -->
                 </div>
                 <div class="sub-navigation-chapter cool-link2">
                     <a class="main-nav-link" linkedidchapter="slide1-chapter3"
-                        onclick="jumpToTitle('slide1-chapter2',6000)">两种方式进行启动子从头设计</a>
+                        onclick="jumpToTitle('slide1-chapter3',-1)">VAE的构建</a>
                     <!------Chapter Three -->
                 </div>
                 <div class="sub-navigation-chapter cool-link2">
                     <a class="main-nav-link" linkedidchapter="slide1-chapter4"
-                        onclick="jumpToTitle('slide1-chapter2',7600)">多种方式对生成的启动子进行分析</a>
+                        onclick="jumpToTitle('slide1-chapter4',-1)">遗传算法的设计与优化</a>
                     <!------Chapter Three -->
                 </div>
-                <div class="sub-navigation-chapter cool-link2">
-                    <a class="main-nav-link" linkedidchapter="slide1-chapter5"
-                        onclick="jumpToTitle('slide1-chapter2',10000)">讨论</a>
-                    <!------Chapter Three -->
-                </div>
+                
             </div>
         </aside>
 
@@ -312,189 +341,122 @@
                     <div class="main-body">
                         <div class="main-body-content">
                             <div id="slide1-chapter1">
-                                <h2>数据准备</h2>
-                                <h3>机器学习的训练数据</h3>
-                                <h4>枯草芽孢杆菌基因组尺度启动子序列-转录强度数据库</h4>
-                                <p>通过使用3种预测软件进行投票的方式，我们在枯草芽孢杆菌基因组中预测出了4501条启动子序列。同时，我们对实验室中枯草芽孢杆菌菌株进行转录组测序，获得了不同基因的转录强度。（详细描述见方案protocol）
-                                </p>
-                                <p>依照启动子序列与调控基因的对应关系，将基因的转录强度（表示为FPKM值）与启动子进行一一对应。由于不同基因的表达强度相差几个数量级，为了提升训练效果，我们将强度为0的数据舍弃，之后对所有数据取log2处理。去掉重复序列后，4128条启动子序列的强度分布如下：
-                                </p>
+                                <h2 href='slide1-chapter1'>概述</h2>
+                                
+                                <p>本项目旨在利用计算方法挖掘启动子的特征，建立枯草芽孢杆菌从头合成启动子的设计与启动子强度分析系统，并实现设计特定强度的人工启动子的功能。</p>
+                                <p>经过前期的调研和讨论，我们决定分别使用两种方式生成启动子：通过缩小重构误差、提高分布相似性来学习训练样本特征的变分自编码器（Variational auto-encoder，VAE），和基于生物中的“淘汰与进化”的思想、并经过改进的进化算法——遗传算法(Genetic Algorithm，GA)。另一方面，我们还训练了一个强度预测网络，通过将其与生成模型组合使用，我们对生成的启动子进行约束，从而获得目标强度的启动子。整体模型框架如下图所示：</p>
                                 <div class="figure-container" style="text-align:center">
-                                    <img src="static/pictures/res_figure1.png" alt="">
+                                    <img src="static/pictures/model_fig1.png" alt="">
+                                    <h4 style="text-align: center;margin-bottom: 5%; padding-left: 10%;padding-right: 10%;">图1 两种方式生成特定强度的启动子。(A)基于神经网络的模型框架，首先由VAE生成大量启动子，再使用预测器进行强度筛选。(B)基于遗传算法的模型框架，通过将预测器预测结果作为目标函数之一，在每轮迭代过程中不断进行强度的筛选，最后生成的启动子使用启动子预测软件进行过滤，以提高生成结果的质量。</h4>
                                 </div>
 
                             </div>
+                            
                             <div id="slide1-chapter2">
-                                <h3>基于荧光蛋白相对强度归一化处理的文献数据</h3>
-                                <p>在收集天然启动子数据的同时，我们还通过收集多篇文献获得了文献启动子序列-强度数据。但由于不同文献表示相对强度的参考值不同，为了获得一致化的本地数据，我们从每组文献选取出中等强度的启动子，构建表达绿色荧光蛋白GFP的质粒进行表征，并将以枯草芽孢杆菌中典型的强启动子PvegI的强度定为100，不同文献启动子荧光蛋白相对强度及其归一化结果如图所示。
+                                <h2 href='slide1-3'>预测器的构建</h2>
+                                <p>利用启动子序列信息实现启动子强度的定量预测需要发掘出序列中决定启动子强度的“特征”信息。本项目利用深度学习技术构建从序列预测启动子强度的回归模型，利用卷积神经网络进行对序列特征进行提取与学习，利用长短期记忆神经网络对功能域之间的长期依赖关系进行学习。模型主要包括嵌入阶段（Embeding stage）、卷积阶段（CNN stage）、长短期记忆神经网络阶段（LSTM stage）、密集化阶段（Dense stage）等结构，接收输入的启动子序列，分别进行数据转换和特征提取，并最终输出启动子的强度预测值。
                                 </p>
                                 <div class="figure-container" style="text-align:center">
-                                    <img src="static/pictures/res_figure2.png" style="width:60%; ">
-
+                                    <img src="static/pictures/model_fig2.png" style="width:100%; ">
+                                    <h4 style="text-align: center;margin-bottom: 5%;font-size: 1.3rem;">图2 预测模型结构图</h4>
                                 </div>
-                                <p>以实验测得的表达强度为标准将文献数据的强度进行统一，经过去除重复的启动子序列，并对其相对荧光强度处理（取log2）后，我们得到了578条经过实验验证的启动子数据集。
+                                <h3>（1）数据预处理</h3>
+                                <p>本项目针对枯草芽孢杆菌启动子，设定的启动子长度为61bp。为了使启动子序列能被计算机识别，工作的第一步就是对序列中的A、T、C、G的碱基信息进行编码(encoding)，按{A: 1, T: 2, C: 3, G: 4}的规则，将四个碱基序列分别映射成一个具体的实数。（编码的顺序单纯地为了方便起见，不影响实验的结果）
                                 </p>
+                                <h3>（2）嵌入 ( Embedding stage ) 阶段</h3>
+                                <p>
+                                    嵌入阶段会将预处理得到的序列向量中的每一个数字映射成一个固定长度(embedding_dim)的向量。假设embedding_dim=16，则一个长度为61的启动子序列在经过预处理和嵌入阶段后，会转化为一个61×16的矩阵，用于后续的特征提取。相比与常用的one-hot编码方式，嵌入阶段的引入能使模型具有更灵活的特征学习与参数调整方案。最终模型选取的embedding_dim=128。
+                                </p>
+                                <h3>（3）卷积(CNN stage)阶段</h3>
+                                <p>
+                                    卷积阶段会利用多个卷积核去探测上述获得的矩阵，进行特征提取。可以将卷积核看作是motif探测器，利用卷积核探测启动子序列中关键及潜在的基序特征。在卷积操作后，依次引入激活函数Relu以增加模型非线性属性，引入池化层进行下采样，用于特征降维，压缩数据和参数的数量，减小过拟合，同时提高模型的容错性。
+                                </p>
+                                <h3>（4）长短期记忆神经网络阶段（LSTM stage）</h3>
+                                <p>
+                                    LSTM是循环神经网络RNN的一种性能更好的模型，它将由卷积阶段产生的特征映像以时间步长的形式输入到LSTM神经网络中，输出一个固定长度的向量。其主要用1个特定的记忆细胞去存储信息，对于存在依赖关系的数据有着非常显著的性能。模型通过引入LSTM阶段以加强模型对于基序间相互关系的发掘，有助于学习到更多序列的潜在特征。
+                                </p>
+                                <h3>（5）密集化（Dense stage）阶段</h3>
+                                <p>
+                                    在密集化阶段，通过全连接层将上述步骤得到的特征映像成为一个具体的数字，从而作为启动子强度的预测值输出。
+                                </p>
+                                <p>具体训练结果 详见 <a>结果</a></p>
+                               
 
-                            </div>
-                            <div id="slide1-chapter3">
-                                <h2>预测器的训练及评估</h2>
-                                <h3>模型训练</h3>
-                                <h4>数据集的获取与处理</h4>
-                                <p>根据方案Protocol中描述，前期结合启动子预测、转录组测序以及文献数据一致化处理，分别构建了启动子序列-转录强度数据库与序列-相对强度数据库。由于测得的强度数值差异过大，统一将强度数值进行取log2的操作。其中启动子序列-转录强度数据库包含4128条启动子与强度信息，序列-相对强度数据库包含578条启动子与强度信息。
-                                </p>
-                                <h4>模型训练与参数调整</h4>
-                                <p>分别利用启动子序列-转录强度数据库与序列-相对强度数据库对所构建的预测器进行训练。利用K-折交叉验证对模型的学习速率α、迭代次数epoch、批量大小batch-size、卷积核大小与数目、嵌入层维度等参数进行调整优化。
-                                </p>
-                                <p>
-                                    在训练过程中，我们发现：由启动子预测识别结合转录组测序获得的启动子序列-转录强度数据库，虽然数据量较大，启动子类型更丰富，但很难利用模型训练出有价值的序列与强度的对应关系，如下图所示：
-                                </p>
-                                <p>
-                                    相比之下，由文献收集结合实验室一致化获得的启动子序列-相对强度数据库能较好的训练模型，并能随着模型的改进和参数的调整，不断提高预测能力。
-                                </p>
-                                <p>
-                                    对此，我们分析有以下几点可能的原因：
-                                </p>
-                                <p>
-                                    序列-转录强度数据库的获得经过启动子预测与转录组测序两步，影响数据准确度的误差因素更多，可能导致序列与强度的相关性降低。
-                                </p>
-                                <p>
-                                    由于原核生物的多顺反子结构，一个启动子可能控制多个基因的表达，启动子强度和部分基因的转录强度关联性较低，给训练带来困难。
-                                </p>
-                                <p>
-                                    序列-相对强度数据库的获得经过实验的一致化处理，由启动子调控的GFP基因的荧光表达强度与细胞生物量的比值作为启动子的相对强度，消除了其他因素的影响，序列与强度的相关性更强。
-                                </p>
-                                <p>
-                                    因此，后续我们使用启动子序列-相对强度数据库作为模型的训练数据集。
-                                </p>
-                                <p>
-                                    在模型的参数调整过程中，我们在模型网络中加入Dropout层，在训练中暂时随机丢弃部分神经元以减少神经元之间复杂的共适应关系，防止过拟合现象，并加入BN(Batch
-                                    Normalization)层以加快模型拟合速度，提升泛化能力。最终，确定模型的关键参数学习速率α=0.001、迭代次数epoch=300、批量大小batch-size=32，卷积核数目dim=256，嵌入层维度embedding_dim=128。
-                                </p>
-                                <h2>模型评估</h2>
-                                <p>
-                                    为评估我们所构建的预测模型的定量预测能力，选用平均绝对值误差(Mean Absolute
-                                    Error，MAE)以计算预测值和观测值之间绝对误差的平均值，同时选用皮尔逊系数(Pearson product-moment correlation
-                                    coefficient，PCCs)以度量预测值和观测值之间的相关程度。即用MAE和PCCs作为模型预测性能的评估指标。（其中MAE的值域为[0,∞]，值越小表示误差越小。PCCs的值域为[-1,1]，值越大表示变量间相关性越高）
-                                </p>
-                                <p>
-                                    我们随机将数据集的80%数据作为训练集训练模型，将剩下的20%数据作为测试集测试模型性能，并使用K-折交叉验证(k=5)进一步验证。最终我们的预测模型在测试集上结果为MAE=0.8095，PCCs=0.6063。（效果优于2018年Wang等在NAR上报道的预测器性能，PCCs=0.514）
-                                </p>
-                                <p>
-                                    此外，为了进一步评估我们所构建的预测模型的性能，我们重构了回归算法常用的卷积神经网络(Convolutional Neural Network,
-                                    CNN)、支持向量机(Support Vector Machine，SVM)、XGBoost算法（eXtreme Gradient
-                                    Boosting）等多种模型，采用同样的训练及测试方式，作为评估模型性能的对照。
-                                </p>
-
-
-                                <h2>两种方式进行启动子从头设计</h2>
+                                <h2 href='slide1-chapter3' id="slide1-chapter3">VAE的构建</h2>
                                 <h3>变分自编码器VAE</h3>
                                 <p>
-                                    如模型model中描述，我们构建了用于启动子生成的变分自编码器（Variational
-                                    auto-encoder，VAE）用于人工启动子序列的生成。使用全部启动子预测数据作为训练集，将重构损失和KL散度作为损失函数，使用Adam优化器训练1000epoch，损失函数的变化趋势和生成的启动子的示意图如下图所示（每4列分别代表一条序列中的A、C、G、T，从上到下为该序列的-60~0bp）。
+                                    变分自编码器（Variational auto-encoder，VAE）是一类生成模型，由编码器（encoder）和解码器（decoder）两部分组成，原始数据经过编码器的处理后生成一个隐空间中的隐含向量，而解码器可以识别出这个隐含向量中的信息，将其还原为原始数据。通过直接从特定的分布中采样并使用解码器进行还原，就可以实现与训练样本相似但不同的新数据的生成。VAE的优势在于其可以形成一个连续的隐空间，产生平滑过渡的样本。
                                 </p>
                                 <div class="figure-container" style="text-align:center">
-                                    <img src="static/pictures/res_figure6.png" style="width:50%; ">
+                                    <img src="static/pictures/model_fig3.png" style="width:100%; ">
+                                    <h4 style="text-align: center;margin-bottom: 5%;font-size: 1.3rem;">图3 VAE结构示意图</h4>
                                 </div>
                                 <p>
-                                    将其取argmax后转换回DNA序列，即可获得模型生成的启动子。
+                                    对于输入数据，我们选择对61bp的启动子序列使用one-hot的编码方式，并将其转换为图像表示，如下图所示：
                                 </p>
-                                <h1>遗传算法</h1>
+                                <div class="figure-container" style="text-align:center">
+                                    <img src="static/pictures/model_fig4.png" style="width:100%; ">
+                                    <h4 style="text-align: center;margin-bottom: 5%;font-size: 1.3rem;">图4 启动子序列的图像表示。每4列分别代表一条序列中的A、C、G、T，从上到下为该序列的-60~0bp。</h4>
+                                </div>
                                 <p>
-                                    如模型model中描述，在遗传算法的建立过程中，共产生3了三个版本，相应的训练参数及结果如下：
+                                    我们发现这种图像表示的序列其实已经是一种相对简明的数据编码方式，因此在编码时我们没有再使用卷积层对其进行降维处理，而是直接使用全连接层将这种编码方式映射到隐空间，模型结构如图3所示。通过这种方式构建的模型结构简单、训练速度快，但仍拥有较好的性能。
                                 </p>
+                                <p>具体训练结果 详见 <a>结果</a></p>
 
-                                <table>
-                                    <tr>
-                                        <th>版本号</th>
-                                        <th>每代个体</th>
-                                        <th>每代与目标种群整体PSSM距离评分</th>
-                                        <th>每代与个体聚类PSSM距离评分</th>
-                                        <th>强度范围</th>
-                                        <th>最终选择与整体分布距离评分</th>
-                                        <th>交叉概率</th>
-                                        <th>变异概率</th>
-                                        <th>代数</th>
-                                    </tr>
-                                    <tr>
-                                        <td>v1.0</td>
-                                        <td>100000</td>
-                                        <td>大于1</td>
-                                        <td>--</td>
-                                        <td>--</td>
-                                        <td>大于20</td>
-                                        <td>0.1</td>
-                                        <td>0.01</td>
-                                        <td>50</td>
-                                    </tr>
-                                    <tr>
-                                        <td>v2.0</td>
-                                        <td>100000</td>
-                                        <td>大于1</td>
-                                        <td>小于50</td>
-                                        <td>--</td>
-                                        <td>大于20</td>
-                                        <td>0.1</td>
-                                        <td>0.01</td>
-                                        <td>50</td>
-                                    </tr>
-                                    <tr>
-                                        <td>v2.0</td>
-                                        <td>100000</td>
-                                        <td>大于1</td>
-                                        <td>小于60</td>
-                                        <td>1~3</td>
-                                        <td>大于20</td>
-                                        <td>0.1</td>
-                                        <td>0.01</td>
-                                        <td>50</td>
-                                    </tr>
-                                </table>
 
-                                <p>评价：</p>
-                                <p>1.遗传算法能够生成与目标种群具有相似概率分布的基因序列。</p>
-                                <p>2.由于fitness函数淘汰了许多与整体有轻度差异的个体，保留了大部分与整体高度相似的个体，因此提取的特征较为单一。(见-10区，相比于ground
-                                    truth，许多不显著的特征被“灭绝”)</p>
-                                <p>3.由于生存下来的个体大多与目标群体中某个聚类相似，所以一些在ground truth中不存在的模式在生成的序列中被凸显出来。</p>
-                                <p>4.由于遗传算法的迭代性，预测准确度可以在迭代的过程中不断积累，最后得到强度较高的启动子种群(代价是每一代需要产生更多个体防止种群灭绝，会消耗更多的计算性能)。</p>
+
 
                             </div>
                             <div id="slide1-chapter4">
-                                <h2>多种方式对生成的启动子进行分析</h2>
+                                <h2 href='slide1-chapter4'>遗传算法的设计与优化</h2>
                                 <p>
-                                    将模型的不同模块分别构建好后，我们将其组合起来。为测试模型效果，我们进行中等强度启动子（log2x = 1-3）的生成，具体参数如下所示
-                                </p>
-                                <p>VAE</p>
-                                <p>
-                                    使用VAE生成4500个启动子序列，通过预测器筛选强度为1-3的启动子
+                                    遗传算法（Genetic Algorithm，GA）是模拟达尔文生物进化论的自然选择和遗传学机理的生物进化过程的计算模型，是一种通过模拟自然进化过程搜索最优解的方法。遗传算法的基本运算过程如下：
                                 </p>
                                 <p>
-                                    遗传算法：
+                                    首先随机生成序列进行种群初始化。选择个体适应度较高的序列，进行交叉，产生子代，并淘汰达不到强度要求的序列。最后对子代的序列进行变异以确保多样性。重复多次，直到产生达到强度的序列。
                                 </p>
-                                <table>
+                                <div class="figure-container" style="text-align:center">
+                                    <img src="static/pictures/model_fig5.png" style="width:100%; ">
+                                    <h4 style="text-align: center;margin-bottom: 5%;font-size: 1.3rem;">图5 遗传算法的基础思路</h4>
+                                </div>
+                                <p>在模型的建立过程中，随着评价指标的不断完善，实现了下表中的三个版本：</p>
+                                <table style="text-align: center !important;">
                                     <tr>
-                                        <th>版本号</th>
-                                        <th>每代个体</th>
-                                        <th>每代与目标种群整体PSSM距离评分</th>
-                                        <th>每代与个体聚类PSSM距离评分</th>
-                                        <th>强度范围</th>
-                                        <th>最终选择与整体分布距离评分</th>
-                                        <th>交叉概率</th>
-                                        <th>变异概率</th>
-                                        <th>代数</th>
+                                        <th style="text-align: center !important;width: 40px !important;padding: 0%;" >版本</th>
+                                        <th style="text-align: center !important;">简介</th>
                                     </tr>
                                     <tr>
-                                        <td>v2.0</td>
-                                        <td>100000</td>
-                                        <td>大于1</td>
-                                        <td>小于60</td>
-                                        <td>1~3</td>
-                                        <td>大于20</td>
-                                        <td>0.1</td>
-                                        <td>0.01</td>
-                                        <td>50</td>
+                                        <td style="text-align: center !important;width: fit-content !important;">v1.0</td>
+                                        <td>评价个体适应度时，仅考虑生成序列与目标序列整体的相似度。</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: center !important;width: fit-content !important;">v2.0</td>
+                                        <td>在v1.0的基础上，考虑生成序列与目标种群的个体差异。</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: center !important;width: fit-content !important;">v2.0</td>
+                                        <td>在v2.0的基础上，对于每一代新种群的每一个个体都预测强度，淘汰强度超出目标范围的个体。</td>
+                                       
                                     </tr>
                                 </table>
-
+                                <div class="figure-container" style="text-align:center">
+                                    
+                                    <h4 style="text-align: center;margin-bottom: 5%;font-size: 1.3rem;">表1 不同版本的遗传算法</h4>
+                                </div>
+                                <div class="figure-container" style="text-align:center">
+                                    <img src="static/pictures/model_fig6.png" style="width:100%; ">
+                                    <h4 style="text-align: center;margin-bottom: 5%;font-size: 1.3rem;">图6 遗传算法执行流程</h4>
+                                </div>
+                                
+                                <p>
+                                    遗传算法v1.0中适应函数fitness的计算方式主要围绕位置特定评分矩阵(PSSM)。位置特定评分矩阵(PSSM)，也称为位置特定权重矩阵(PSWM)或位置权重矩阵(PWM)，是生物序列中基序（模式）motifs(patterns)的常用表示。PSSM的计算方式为：先从序列计算概率矩阵(PPM)，再从概率矩阵(PPM)计算位置特定评分矩阵(PSSM)。
+                                </p>
+                                <p>
+                                    遗传算法v2.0中通过cd-hit-est的方式对不同类别的个体聚类， 计算个体数较多的类的PSSM，每次产生后代时将后代的PSSM与每个类的PSSM比较，淘汰差异过近的后代，这样保证让后代与目标种群的总体PSSM分布差异较小的同时，也保证了不同类别个体的差异度。
+                                </p>
+                                
                                 <p>
                                     经过筛选后，最终生成了2396条序列
                                 </p>
@@ -506,54 +468,21 @@
                                         href="http://weblogo.threeplusone.com/create.cgi">WebLogo提供的在线服务</a>分别生成了天然启动子、VAE生成的启动子（图中注释为VAE）、遗传算法生成的启动子（图中注释为GA）的序列标识图。
                                 </p>
                                 <div class="figure-container" style="text-align:center">
-                                    <img src="static/pictures/seq_compare.png" style="width:50%; ">
+                                    <img src="static/pictures/seq_compare.png" style="width:100%; ">
+                                    <h4 style="text-align: center;margin-bottom: 5%;font-size: 1.3rem;">图8 合成启动子与天然启动子的序列标识图对比</h4>
+
                                 </div>
                                 <p>
-                                    图中可以看出，在天然启动子中-10区和-35区有较为明显的特征，而这些特征也成功被我们的模型所识别到，并且相对于天然启动子，其保守性更强。
+                                    遗传算法v3.0中考虑了生成序列的强度，这一评价指标通过深度神经网络预测模型产生。
                                 </p>
-                                <h3>k–mer频率对比</h3>
-                                <p>
-                                    k-mer频率描述了序列中出现所有可能的k个核苷酸序列的频率，是生物信息分析中的一个重要的问题。下图表示了合成启动子与天然启动子的2、4、6、8-mer频率对比，横坐标为天然启动子的k-mer频率，纵坐标为合成启动子的k-mer频率，图中注释为二者之间的js散度（js散度越低表示两种分布越接近）。
-                                </p>
-                                <div class="figure-container" style="text-align:center">
-                                    <img src="static/pictures/kmer_compare.png" style="width:50%; ">
-                                </div>
-                                <h3>比较不同6bp基序的出现位置及频率</h3>
-                                <p>
-                                    除了对全部k-mer频率进行统计外，我们还选取了在天然启动子中出现频率较高的几个6bp基序，分析其在序列中的出现位置，其中包括最常见的-10区（TATAAT）基序和-35区（TTGACA）基序。
-                                </p>
-                                <div class="figure-container" style="text-align:center">
-                                    <img src="static/pictures/motif_compare.png" style="width:50%; ">
-                                </div>
-                                <p>
-                                    总之，从统计分析的层面看，我们所生成的启动子与天然启动子的特征相符，有在真正的细胞环境中发挥出启动子活性的潜力。
-                                </p>
+                                <p>具体训练结果 详见 <a>结果</a></p>
 
                             </div>
                             <div id="slide1-chapter5">
-                                <h2>讨论</h2>
-                                <h3>转录组数据和文献数据的特点</h3>
-                                <p>在实验的过程中，我们发现通过文献调研和实验表征得到数据库尽管数据量较小，但相对于大量的使用转录组测序和启动子预测所获得的数据而言，其训练效果明显更好。我们曾尝试使用包括Vgg16在内的更复杂、学习能力更强的模型进行训练，但没有得到更好的效果，这说明限制模型效果的因素很可能在于数据本身的相关性。
-                                </p>
-                                <p>由于基因的表达强度受多种因素影响，启动子虽然在其中起到了较为重要的作用，但使用转录组测序的数据会受其他因素影响而使序列和强度之间的相关性降低。使用荧光蛋白虽然表征的是蛋白表达强度而转录强度，但由于表达载体在构建过程中排除了其他干扰项，因此启动子序列和表达强度之间的相关性更强。未来我们应着眼于寻找更多具有更高相关性的数据进行训练，以达到更好的效果。
 
-                                </p>
-                                <p>
-                                    >> 这与我们咨询相关专家得到的反馈相符 详见 合作 collaboration
-                                </p>
-                                <h3>模型合成启动子的分析</h3>
-                                <p>
-                                    如上文所述，从序列保守性、k-mer频率、典型基序的出现位置等角度来看，模型生成的启动子与天然启动子有着相似的特征。
-                                </p>
-                                <p>
-                                    但在分析的过程中，合成启动子也显示出一些与天然启动子有所不同的特点，如不同位置碱基的保守性更强、特定基序在某些位置的出现频率更高，这是否与启动子的强弱相关联，需要待后续通过实验的方式进一步确认。
-                                </p>
-                                <h3>合成启动子活性的验证分析</h3>
-                                <p>
-                                    我们原计划在模型构建完成后，通过选取生成的启动子重新构建GFP表达质粒的方式进行实验表征，以进一步验证模型的有效性，并指导我们对模型进行下一步的完善。但由于1月份天津市突发疫情，所需的实验材料因实验室封闭管理而无法送达，因此实验计划受到影响。待实验室恢复正常运行后，我们将完成对生成结果的进一步验证。
-                                </p>
 
                             </div>
+
 
 
 
@@ -588,9 +517,7 @@
         <div class="footer-items">
             <div class="footer-item">
                 <h1>About Us</h1>
-                <p1>This team is composed of many enthusiastic students with different majors from Two colleges of our
-                    university. To help the world better development, a group of the beginners were looking
-                    forward to gaining extraordinary experience, and we did it.</p1>
+                <p1><a href="Team.html">团队介绍</a></p1>
             </div>
             <div class="footer-item">
                 <h1>Address</h1>
@@ -606,18 +533,18 @@
             <div class="footer-item footer-icons">
                 <div>
                     <a target="_blank" href="https://user.qzone.qq.com/3116652779">
-                        <img src="https://2021.igem.org/wiki/images/3/3f/T--NEFU_China--QQ.png" alt="">
+                        <img src="https://2021.igem.org/wiki/images/3/3f/T--NEFU_China--QQ.png"  alt="">
                     </a>
                     <a target="_blank" href="">
-                        <img src="https://2021.igem.org/wiki/images/f/f6/T--NEFU_China--weixin.png" alt="">
+                        <img src="static/pictures/github.png" alt="">
                     </a>
                     <a class="footer-icons1" target="_blank" href="null">
                         <img src="static/pictures/facebook.png" alt="">
                     </a>
                 </div>
-                <div class="footer-icons2">
+                <!-- <div class="footer-icons2">
                     <img src="static/pictures/logo1.png" alt="">
-                </div>
+                </div> -->
             </div>
         </div>
     </footer>
@@ -652,10 +579,27 @@
         }
         return false;
     }
+    function getElementTop(element) {
+        var actualTop = element.offsetTop;
+        var current = element.offsetParent;
+
+        while (current !== null) {
+            actualTop += current.offsetTop;
+            current = current.offsetParent;
+        }
+
+        return actualTop;
+    }
 
     function jumpToTitle(titleName, location = -1) {
         if (location == -1) {
-            window.location.href = '#' + titleName;
+            // window.location.href = '#' + titleName;
+            element = document.getElementById(titleName)
+            height = getElementTop(element)
+            window.scrollTo({
+                top: height - 100,
+                behavior: 'smooth'
+            })
         }
         else {
             window.scrollTo({
@@ -669,17 +613,24 @@
 </script>
 
 <style>
-    .zoom {
-        zoom: 0.6;
-    }
-
     #main_body {
         width: 90%;
         margin-left: auto;
         margin-right: auto;
         margin-top: 0px;
         padding: 0px;
+    }
 
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+        font-weight: 400;
+        color: #01090c;
+        text-transform: none;
     }
 
     .title {
@@ -717,6 +668,31 @@
     }
 </style>
 <style>
+    a {
+    text-decoration: none;
+    color: #74aaf0;
+    background: none;
+    }
+    /* img{
+        box-shadow: rgb(50 50 93 / 25%) 0px 50px 100px -20px, rgb(0 0 0 / 30%) 0px 30px 60px -30px;
+    } */
+    table,
+    table tr th,
+    table tr td {
+        border: 1.5px solid #74aaf0;
+        margin: auto;
+        padding-left: 1%;
+        padding-right: 1%;
+    }
+
+    table {
+        /* width: 200px; */
+        min-height: 25px;
+        line-height: 25px;
+        text-align: center;
+        border-collapse: collapse;
+    }
+
     /***文本部分样式***/
     .bg {
         background-color: #f5f5f5;
@@ -738,7 +714,7 @@
     /**********时间轴/子导航/进度条***********/
     .sub-navigation-content {
         padding: 2em 0;
-        margin-left: 40%;
+        margin-left: 20%;
         /* border-right: solid 3px #FE9901; */
         max-width: 220px;
         display: block;
@@ -756,6 +732,7 @@
     //     return false;
     // }
 
+
     //获取滚动条位置
     setInterval(scrollPosition, 500)
     function scrollPosition() {
@@ -771,17 +748,18 @@
         for (let i = 0; i < elements.length; ++i) {
             elements[i].className = "main-nav-link"
         }
-        if (t < 3650 - 500) {
+        eps = 300
+        if (t < getElementTop(document.getElementById('slide1-chapter2')) - eps) {
             elements[0].classList.add("active")
         }
-        else if (t < 6000 - 500) {
+        else if (t < getElementTop(document.getElementById('slide1-chapter3')) - eps) {
             elements[1].classList.add("active")
         }
-        else if (t < 7600 - 500) {
+        else if (t < getElementTop(document.getElementById('slide1-chapter4')) - eps) {
             elements[2].classList.add("active")
 
         }
-        else if (t < 10000 - 500) {
+        else if (t < getElementTop(document.getElementById('slide1-chapter5')) - eps) {
             elements[3].classList.add("active")
 
         }
@@ -801,6 +779,13 @@
 
     function hideProjectBlock() {
         document.getElementById("project").style.display = "none"
+    }
+    function showTeamBlock() {
+        document.getElementById("team").style.display = "block"
+    }
+
+    function hideTeamBlock() {
+        document.getElementById("team").style.display = "none"
     }
 
     function showSuppBlock() {
@@ -826,21 +811,12 @@
 
 <style>
     /**************文本和时间轴***************/
-    .main-body h2 {
-        font-size: 3.3em;
-        padding: 0.5em 0 0.5em 0;
-        color: #77abce;
-        scroll-margin-top: 79px;
-        font-family: "geometos"
-            /*大标题*/
-        ;
-    }
 
     /************ Sub navigation  *********************/
     aside {
-        width: 580px;
+
         float: left;
-        padding-top: 5em;
+        padding-top: 8em;
     }
 
     .grid-normal {
@@ -866,20 +842,22 @@
 
     .sub-navigation-chapter a {
         color: #212832;
-        font-size: 1.2em;
+        font-size: 1.0em;
         padding: 0.3em 0.3em 0 0.5em;
         display: block;
         transition: transform 0.5s;
     }
 
     .sub-navigation-chapter a:hover {
-        color: #ee786b;
+        color: #74aaf0;
         transform: scale(1.1, 1.1);
     }
 
     a.main-nav-link.active {
         font-weight: normal;
-        color: #ee786b;
+        color: #74aaf0;
+        border-left: 6px solid #ccc !important;
+        border-color: #74aaf0 !important;
     }
 
     .main-nav-link {
@@ -949,7 +927,7 @@
     .main-body {
         /*padding: 0 0 1em 0;*/
         padding-left: 10px;
-        padding-right: 300px;
+        padding-right: 130px;
         /*text-align: center;*/
         /*width: 100vh;*/
         /*margin: 0 auto;*/
@@ -958,7 +936,7 @@
     .main-body p {
         text-align: justify;
         padding-bottom: 1em;
-        font-size: 1.3rem;
+        font-size: 1.7rem;
 
     }
 
@@ -971,7 +949,7 @@
             /*大标题*/
     }
 
-    .main-body h3 {
+    /* .main-body h3 {
         padding-bottom: 0.5em;
         font-size: 2.5em;
     }
@@ -979,9 +957,9 @@
     .main-body h4 {
         font-style: italic;
         font-size: 1.9em;
-    }
+    } */
 
-    .main-body li {
+    */ .main-body li {
         text-align: justify;
         list-style-position: outside;
         padding: 0.2em 0;
@@ -991,6 +969,10 @@
         text-align: left;
         font-size: 0.9em;
         font-weight: normal;
+    }
+    .figure-container h4{
+        font-size: 1.3rem;
+
     }
 
     .main-body ul,
@@ -1095,7 +1077,7 @@
     }
 
     .nav.active .container {
-        padding: 10px 0;
+        padding: 0px 0;
     }
 
     .nav a.current,
